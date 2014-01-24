@@ -1,0 +1,296 @@
+[
+  {
+    "treatment_id": "d9027510-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f18eb0-671d-0131-38d1-3c07545ed162",
+    "fixed": true,
+    "scheduled_at": "2014-01-25 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027400-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f19d00-671d-0131-38d1-3c07545ed162",
+    "fixed": true,
+    "scheduled_at": "2014-01-20 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027360-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1a280-671d-0131-38d1-3c07545ed162",
+    "fixed": true,
+    "scheduled_at": "2014-01-20 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1a730-671d-0131-38d1-3c07545ed162",
+    "fixed": true,
+    "scheduled_at": "2014-01-15 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1ac30-671d-0131-38d1-3c07545ed162",
+    "fixed": true,
+    "scheduled_at": "2014-01-15 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1b110-671d-0131-38d1-3c07545ed162",
+    "fixed": true,
+    "scheduled_at": "2014-01-15 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1b5e0-671d-0131-38d1-3c07545ed162",
+    "fixed": true,
+    "scheduled_at": "2014-01-15 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027510-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685c90-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1ba70-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-15 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027400-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685c90-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1c030-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-10 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027360-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685c90-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1c5f0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-10 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685c90-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1c990-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-05 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685c90-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1ccf0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-05 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685c90-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1d070-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-05 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685c90-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1d400-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-05 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027510-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685d50-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1d780-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-08 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027400-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685d50-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1dad0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-03 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027360-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685d50-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1def0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-03 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685d50-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1e280-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-26 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685d50-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1e610-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-26 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685d50-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1e960-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-26 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685d50-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1ed00-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-02-26 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027510-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686130-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1f0a0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-29 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027400-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686130-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1f430-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-24 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027360-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686130-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1f780-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-24 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686130-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1fbe0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-19 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686130-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f1ff70-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-19 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686130-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f202b0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-19 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686130-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f20640-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-03-19 09:00:00 +0100"
+  },
+  {
+    "treatment_id": "d9027510-66ff-0131-38cb-3c07545ed162",
+    "step_id": "746861e0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f209c0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-19 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027400-66ff-0131-38cb-3c07545ed162",
+    "step_id": "746861e0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f20d50-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-14 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027360-66ff-0131-38cb-3c07545ed162",
+    "step_id": "746861e0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f210a0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-14 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "746861e0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f21670-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-09 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "step_id": "746861e0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f21a20-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-09 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "step_id": "746861e0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f21da0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-09 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "746861e0-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f22100-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-09 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027510-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686280-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f22470-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-05-10 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027400-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686280-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f22810-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-05-05 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027360-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686280-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f22bb0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-05-05 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686280-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f22f00-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-30 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686280-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f23330-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-30 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686280-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f236c0-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-30 09:00:00 +0200"
+  },
+  {
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74686280-66fd-0131-38cb-3c07545ed162",
+    "appointment_id": "e5f23a40-671d-0131-38d1-3c07545ed162",
+    "fixed": false,
+    "scheduled_at": "2014-04-30 09:00:00 +0200"
+  }
+]

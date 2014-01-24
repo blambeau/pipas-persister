@@ -22,9 +22,22 @@ namespace :db do
 
   def seed(from)
     folder = ROOT/"seeds/#{from}"
-    files  = folder.glob("*.json").sort
-    names  = files.map{|f| f.basename.rm_ext.to_s[/^\d+-(.*)/, 1].gsub(/-/, '_') }
-    pairs  = files.zip(names)
+
+    # load metadata and install parent dataset if any
+    metadata = (folder/"metadata.json").load
+    if parent = metadata["inherits"]
+      seed(parent)
+    end
+
+    # load files in order
+    files = folder.glob("*.json").reject{|f| f.basename.to_s =~ /^metadata/ }.sort
+    names = files.map{|f|
+      f.basename.rm_ext.to_s[/^\d+-(.*)/, 1].gsub(/-/, '_')
+    }
+    pairs = files.zip(names)
+
+    # Truncate tables then fill them
+    puts "--- Seeding `#{from}`"
     DB.connect do |conn|
       names.reverse.each do |name|
         puts "Removing from #{name}"
