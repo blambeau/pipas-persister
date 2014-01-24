@@ -3,6 +3,22 @@
 This repository provides an implementation of the PIPAS Persister, its
 PostgreSQL database and RESTful interface.
 
+A test deployment runs on the [Heroku cloud platform](https://heroku.com/).
+The application can be reached at http://pipas-persister.herokuapp.com/
+
+## Project structure
+
+    /config      private configuration files on specific deployments
+    /lib         ruby code of the logical database facade and RESTful interface
+    /migrations  database migrations files (managed by Sequel)
+    /seeds       definition of test datasets
+    /tasks       Rake tasks (e.g. test:unit, db:migrate)
+    /test        Unit and acceptance tests
+
+Developers of other PIPAS components are invited to read the cucumber specs
+for a description of the implemented features (see test/acceptance/*.features)
+here.
+
 ## How to install?
 
 * Make sure that you have a recent PostgreSQL (>= 9.2)
