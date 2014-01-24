@@ -1,3 +1,6 @@
+Given(/^the situation is the one described in the '(.*?)' dataset$/) do |dataset|
+end
+
 Given(/^I make a GET request to '(.*?)'$/) do |url|
   client.get(url)
 end

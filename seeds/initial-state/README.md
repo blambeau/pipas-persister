@@ -11,3 +11,6 @@ system. It contains,
 * No cure prescription, no delivery, no appointment yet
 * Bed and nurse availabilities (more on wednesdays, less on saturdays, nothing on sundays)
 * No patient unavailability
+
+We suppose that the schedule has been computed at "2014-01-01 12:00:00". No
+change has been made since then, so the accuracy timestamp has the same value.

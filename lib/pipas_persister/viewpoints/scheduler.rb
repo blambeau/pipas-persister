@@ -8,7 +8,8 @@ module PipasPersister
     ### schedule (facade)
 
       def schedule
-        extend(Relation::DEE,
+        extend(
+          project(base.protocol_timestamps, [:scheduled_at]),
           service:    ->(t){ service    },
           treatments: ->(t){ treatments })
       end

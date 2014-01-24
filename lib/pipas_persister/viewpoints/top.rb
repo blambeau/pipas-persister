@@ -3,6 +3,8 @@ module PipasPersister
     module Top
       include Alf::Viewpoint
 
+      native :protocol_timestamps
+
       depends :base, Base
       depends :scheduler, Scheduler
       depends :random, Random

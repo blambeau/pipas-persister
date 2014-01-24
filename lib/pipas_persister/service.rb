@@ -5,6 +5,7 @@ require 'alf-rack'
 require_relative 'service/base'
 require_relative 'service/schedule'
 require_relative 'service/facade'
+require_relative 'service/protocol'
 
 module PipasPersister
   module Service
@@ -21,6 +22,9 @@ module PipasPersister
         cfg.database  = PipasPersister::ALF_DATABASE
         cfg.viewpoint = PipasPersister::Viewpoint::Top[]
       end
+
+      # Implement the lock protocol and accuracy timestamp header
+      use Service::Protocol
 
       map '/schedule' do
         run Service::Schedule

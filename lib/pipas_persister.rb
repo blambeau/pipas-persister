@@ -4,6 +4,8 @@ require 'time'
 require 'pg'
 require 'sequel'
 
+require_relative 'ext/datetime'
+
 require 'alf'
 require_relative 'ext/alf/detail'
 
