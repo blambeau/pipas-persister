@@ -7,7 +7,11 @@ require 'pipas_persister'
 # See .rake files there for complete documentation.
 #
 Dir["tasks/*.rake"].each do |taskfile|
-  load taskfile
+  begin
+    load taskfile
+  rescue LoadError
+    # possibly due to environment (e.g. no test on heroku)
+  end
 end
 
 # We run tests by default
