@@ -4,5 +4,7 @@ Feature: Pinging the service
   I want to ping it
 
   Scenario: Pinging the RESTful way
+
     Given I make a GET request to '/'
-    Then  I should observe a "200 Ok" response
+
+    Then  I should receive a "200 Ok" response
