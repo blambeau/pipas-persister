@@ -4,6 +4,7 @@ group :runtime do
   gem "sequel"
   gem "pg", "0.16.0"
   gem "thin"
+  gem "uuid"
 
   gem "alf-core",   path: "/Users/blambeau/work/devel/alf-tool/alf/alf-core"
   gem "alf-sql",    path: "/Users/blambeau/work/devel/alf-tool/alf/alf-sql"
