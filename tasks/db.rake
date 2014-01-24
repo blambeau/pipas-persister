@@ -1,14 +1,8 @@
-require 'path'
-require 'sequel'
-require 'alf'
-
 namespace :db do
-
-  PIPAS_ENV = "devel"
-  ROOT      = Path.dir.parent
-  DB_CONFIG = (ROOT/"config/database.yml").load[PIPAS_ENV]
-  SEQUEL_DB = ::Sequel.connect(DB_CONFIG)
-  DB        = Alf::Database.new(SEQUEL_DB)
+  ROOT      = PipasPersister::ROOT_FOLDER
+  DB_CONFIG = PipasPersister::DATABASE_CONFIG
+  SEQUEL_DB = PipasPersister::SEQUEL_DATABASE
+  DB        = PipasPersister::ALF_DATABASE
 
   def pg_cmd(cmd)
     "#{cmd}"

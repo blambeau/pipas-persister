@@ -1,6 +1,5 @@
-# We run tests by default
-task :test    => :'test:all'
-task :default => :test
+$LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
+require 'pipas_persister'
 
 #
 # Install all tasks found in tasks folder
@@ -10,3 +9,6 @@ task :default => :test
 Dir["tasks/*.rake"].each do |taskfile|
   load taskfile
 end
+
+# We run tests by default
+task :default => :test
