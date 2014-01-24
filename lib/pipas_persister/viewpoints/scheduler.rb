@@ -10,7 +10,7 @@ module PipasPersister
       def schedule
         extend(
           project(base.protocol_timestamps, [:scheduled_at]),
-          service:    ->(t){ service    },
+          service:    ->(t){ service.to_relation.tuple_extract },
           treatments: ->(t){ treatments })
       end
 
