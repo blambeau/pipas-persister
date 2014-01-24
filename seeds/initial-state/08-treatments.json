@@ -1,0 +1,58 @@
+[
+  { 
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
+    "patient_id": "a12b1870-66fa-0131-38cb-3c07545ed162",
+    "diagnosis_date": "2013-12-31",
+    "earliest_start_date": "2014-01-15",
+    "latest_start_date": "2014-02-01"
+  },
+  { 
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
+    "patient_id": "a9588aa0-66fa-0131-38cb-3c07545ed162",
+    "diagnosis_date": "2013-12-31",
+    "earliest_start_date": "2014-01-15",
+    "latest_start_date": "2014-02-01"
+  },
+  { 
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
+    "patient_id": "af18a880-66fa-0131-38cb-3c07545ed162",
+    "diagnosis_date": "2013-12-31",
+    "earliest_start_date": "2014-01-15",
+    "latest_start_date": "2014-02-01"
+  },
+  { 
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
+    "patient_id": "b34fad60-66fa-0131-38cb-3c07545ed162",
+    "diagnosis_date": "2013-12-31",
+    "earliest_start_date": "2014-01-15",
+    "latest_start_date": "2014-02-01"
+  },
+  { 
+    "treatment_id": "d9027360-66ff-0131-38cb-3c07545ed162",
+    "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
+    "patient_id": "b8f4fb80-66fa-0131-38cb-3c07545ed162",
+    "diagnosis_date": "2013-12-31",
+    "earliest_start_date": "2014-01-20",
+    "latest_start_date": "2014-02-06"
+  },
+  { 
+    "treatment_id": "d9027400-66ff-0131-38cb-3c07545ed162",
+    "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
+    "patient_id": "c291c9b0-66fa-0131-38cb-3c07545ed162",
+    "diagnosis_date": "2013-12-31",
+    "earliest_start_date": "2014-01-20",
+    "latest_start_date": "2014-02-06"
+  },
+  { 
+    "treatment_id": "d9027510-66ff-0131-38cb-3c07545ed162",
+    "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
+    "patient_id": "e83c9430-66fa-0131-38cb-3c07545ed162",
+    "diagnosis_date": "2013-12-31",
+    "earliest_start_date": "2014-01-25",
+    "latest_start_date": "2014-02-11"
+  }
+]

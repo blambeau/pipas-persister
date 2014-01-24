@@ -1,0 +1,5 @@
+devel:
+  adapter:  postgres
+  user:     pipas
+  host:     localhost
+  database: pipas
