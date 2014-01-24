@@ -21,5 +21,5 @@ group :development do
   gem "rake",     "~> 10.0"
   gem "rspec",    "~> 2.14"
   gem "cucumber", "~> 1.3"
-  gem "http",     git: "git://github.com/tarcieri/http"
+  gem "http",     git: "git://github.com/blambeau/http"
 end

@@ -70,8 +70,8 @@ GIT
       alf-sql (~> 0.16.0)
 
 GIT
-  remote: git://github.com/tarcieri/http
-  revision: 33d34c23ffd7bdd602c5360943fb82b4c97fafc8
+  remote: git://github.com/blambeau/http
+  revision: b967bf97f47b8d39765523776d7a74f91d937a96
   specs:
     http (0.6.0.pre)
       http_parser.rb (~> 0.6.0)
