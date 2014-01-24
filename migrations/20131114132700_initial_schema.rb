@@ -16,21 +16,21 @@ Sequel.migration do
     create_table(:rest_steps) do
       column :step_id,       "varchar(36)", null: false
       column :tplan_id,      "varchar(36)", null: false
-      column :step_position, "integer",     null: false
+      column :position,      "integer",     null: false
       column :duration,      "float",       null: false
       primary_key [:step_id]
-      index [:tplan_id, :step_position], unique: true
+      index [:tplan_id, :position], unique: true
       foreign_key [:tplan_id], :treatment_plans, :null => false, :key => [:tplan_id], :deferrable=>true
     end
     create_table(:delivery_steps) do
       column :step_id,         "varchar(36)", null: false
       column :tplan_id,        "varchar(36)", null: false
-      column :step_position,   "integer",     null: false
+      column :position,        "integer",     null: false
       column :prescribed_dose, "float",       null: false
       column :nurse_load,      "float",       null: false
       column :bed_load,        "float",       null: false
       primary_key [:step_id]
-      index [:tplan_id, :step_position], unique: true
+      index [:tplan_id, :position], unique: true
       foreign_key [:tplan_id], :treatment_plans, :null => false, :key => [:tplan_id], :deferrable=>true
     end
     create_table(:treatments) do
