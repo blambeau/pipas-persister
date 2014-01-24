@@ -1,4 +1,4 @@
-devel:
+development:
   adapter:  postgres
   user:     pipas
   host:     localhost
