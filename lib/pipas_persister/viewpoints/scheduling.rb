@@ -1,13 +1,13 @@
 module PipasPersister
   module Viewpoint
-    module Scheduler
+    module Scheduling
       include Alf::Viewpoint
 
       depends :base, Base
 
     ### schedule (facade)
 
-      def schedule
+      def problems
         extend(
           project(base.protocol_timestamps, [:scheduled_at]),
           service:    ->(t){ service.to_relation.tuple_extract },
@@ -59,6 +59,6 @@ module PipasPersister
           extend(base.delivery_steps, DELI_STEP_CONSTANTS))
       end
 
-    end # module Scheduler
+    end # module Scheduling
   end # module Viewpoint
 end # module PipasPersister

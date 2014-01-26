@@ -3,7 +3,7 @@ require 'sinatra/base'
 require 'alf-rack'
 
 require_relative 'service/base'
-require_relative 'service/schedule'
+require_relative 'service/scheduling'
 require_relative 'service/facade'
 require_relative 'service/protocol'
 
@@ -26,8 +26,8 @@ module PipasPersister
       # Implement the lock protocol and accuracy timestamp header
       use Service::Protocol
 
-      map '/schedule' do
-        run Service::Schedule
+      map '/scheduling' do
+        run Service::Scheduling
       end
 
       # Run '/' and that kind of 'static' services

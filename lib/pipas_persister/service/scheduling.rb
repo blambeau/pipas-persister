@@ -1,16 +1,16 @@
 module PipasPersister
   module Service
-    class Schedule < Base
+    class Scheduling < Base
       include Alf::Rack::Helpers
 
-      get '/' do
+      get '/problem' do
         Alf::Rack::Response.new{|r|
           r.body = tuple_extract{
-            scheduler.schedule
+            scheduling.problems
           }
         }.finish
       end
 
-    end # class Schedule
+    end # class Scheduling
   end # module Service
 end # module PipasPersister

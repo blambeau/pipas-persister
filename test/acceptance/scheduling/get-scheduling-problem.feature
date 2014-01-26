@@ -1,14 +1,14 @@
 Feature: Getting the current schedule
   In order to compute/improve the current schedule
   As the scheduler component
-  I want to obtain the current schedule from the persister
+  I want to obtain the current scheduling problem from the persister
 
   Background:
     Given the situation is the one described in the 'mid-state' dataset
 
-  Scenario: Getting the schedule on the RESTful interface
+  Scenario: Getting the scheduling problem on the RESTful interface
 
-    Given I make a GET request to '/schedule' with the following headers:
+    Given I make a GET request to '/scheduling/problem' with the following headers:
       | Accept           |
       | application/json |
 

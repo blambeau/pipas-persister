@@ -6,7 +6,7 @@ module PipasPersister
       native :protocol_timestamps
 
       depends :base, Base
-      depends :scheduler, Scheduler
+      depends :scheduling, Scheduling
       depends :random, Random
 
     end # module Top

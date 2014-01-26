@@ -19,6 +19,10 @@ Developers of other PIPAS components are invited to read the cucumber specs
 for a description of the implemented features (see test/acceptance/*.features)
 here.
 
+## Implemented services so far
+
+    GET /scheduling/problem   get the current scheduling problem to solve
+
 ## How to install?
 
 * Make sure that you have a recent PostgreSQL (>= 9.2)

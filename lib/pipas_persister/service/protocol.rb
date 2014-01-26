@@ -9,9 +9,7 @@ module PipasPersister
       attr_reader :app, :env
 
       def call(env)
-        dup._call(env).tap{|r|
-          puts r.inspect
-        }
+        dup._call(env)
       end
 
       def _call(env)
