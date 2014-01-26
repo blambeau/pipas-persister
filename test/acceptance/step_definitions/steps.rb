@@ -28,7 +28,22 @@ end
 
 Then(/^the body should be a json object having the following keys:$/) do |table|
   obj  = client.json_body
-  keys = table.rows.map(&:first)
+  keys = table.rows.map(&:first).sort
   obj.should be_a(Hash)
-  obj.keys.should eq(keys)
+  obj.keys.sort.should eq(keys)
+end
+
+Then(/^the body should be a json array$/) do
+  obj = client.json_body
+  obj.should be_a(Array)
+end
+
+Then(/^all objects in this array should have the following keys:$/) do |table|
+  obj = client.json_body
+  obj.should be_a(Array)
+  keys = table.rows.map(&:first).sort
+  obj.each do |elm|
+    elm.should be_a(Hash)
+    elm.keys.sort.should eq(keys)
+  end
 end

@@ -22,6 +22,7 @@ here.
 ## Implemented services so far
 
     GET /scheduling/problem   get the current scheduling problem to solve
+    GET /patients/            get the list of patients
 
 ## How to install?
 

@@ -4,6 +4,7 @@ require 'alf-rack'
 
 require_relative 'service/base'
 require_relative 'service/scheduling'
+require_relative 'service/patients'
 require_relative 'service/facade'
 require_relative 'service/protocol'
 
@@ -28,6 +29,10 @@ module PipasPersister
 
       map '/scheduling' do
         run Service::Scheduling
+      end
+
+      map '/patients' do
+        run Service::Patients
       end
 
       # Run '/' and that kind of 'static' services
