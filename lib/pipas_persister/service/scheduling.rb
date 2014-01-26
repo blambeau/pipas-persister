@@ -4,11 +4,9 @@ module PipasPersister
       include Alf::Rack::Helpers
 
       get '/problem' do
-        Alf::Rack::Response.new{|r|
-          r.body = tuple_extract{
-            scheduling.problems
-          }
-        }.finish
+        tuple_response {
+          scheduling.problems
+        }
       end
 
     end # class Scheduling

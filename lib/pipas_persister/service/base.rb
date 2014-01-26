@@ -16,6 +16,20 @@ module PipasPersister
         disable :show_exceptions
       end
 
+    private
+
+      def relvar_response(&bl)
+        Alf::Rack::Response.new(env){|r|
+          r.body = relvar(&bl)
+        }.finish
+      end
+
+      def tuple_response(&bl)
+        Alf::Rack::Response.new(env){|r|
+          r.body = tuple_extract(&bl)
+        }.finish
+      end
+
     end # class Facade
   end # module Service
 end # module PipasPersister

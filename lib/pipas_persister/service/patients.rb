@@ -4,11 +4,9 @@ module PipasPersister
       include Alf::Rack::Helpers
 
       get '/' do
-        Alf::Rack::Response.new{|r|
-          r.body = relvar{
-            base.patients
-          }
-        }.finish
+        relvar_response {
+          base.patients
+        }
       end
 
     end # class Patients
