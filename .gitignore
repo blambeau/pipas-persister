@@ -1,1 +1,7 @@
+bin
+.bundle
+
 config/*.yml
+
+Gemfile.local
+Gemfile.local.lock

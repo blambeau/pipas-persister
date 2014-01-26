@@ -1,0 +1,6 @@
+alfrc do |c|
+  c.load_paths |= [ "lib" ]
+  c.requires   |= [ "pipas_persister" ]
+  c.database    = ->{ PipasPersister::ALF_DATABASE }
+  c.viewpoint   = ->{ PipasPersister::Viewpoint::Top[] }
+end
