@@ -1,18 +1,19 @@
-Feature: Getting the current schedule
-  In order to compute/improve the current schedule
-  As the scheduler component
-  I want to obtain the current scheduling problem from the persister
+Feature: Serving the scheduling problem
+  In order for the Scheduler to to compute the optimal schedule
+  As the PIPAS persister
+  I want to provide it with the scheduling problem
 
   Background:
     Given the situation is the one described in the 'mid-state' dataset
 
-  Scenario: Getting the scheduling problem on the RESTful interface
+  Scenario: Responding to a RESTful request to the scheduling problem
 
-    Given I make a GET request to '/scheduling/problem' with the following headers:
+    Given I receive a GET request to '/scheduling/problem' with the following headers:
       | Accept           |
       | application/json |
 
-    Then I should receive a "200 Ok" response
+    Then I should return a "200 Ok" response
+
     And the response should have the following headers:
       | Content-Type     |             X-Accuracy-Timestamp |
       | application/json | 2014-01-01T12:15:00.000000+00:00 |

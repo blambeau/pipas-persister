@@ -1,15 +1,21 @@
+### background
+
 Given(/^the situation is the one described in the '(.*?)' dataset$/) do |dataset|
 end
 
-Given(/^I make a GET request to '(.*?)'$/) do |url|
+### requests
+
+Given(/^I receive a GET request to '(.*?)'$/) do |url|
   client.get(url)
 end
 
-Given(/^I make a GET request to '(.*?)' with the following headers:$/) do |url, table|
+Given(/^I receive a GET request to '(.*?)' with the following headers:$/) do |url, table|
   client.with_headers(table.hashes.first) do
     client.get(url)
   end
 end
+
+### reponse status and headers
 
 Then(/^the response should have the following headers:$/) do |table|
   table.hashes.first.each_pair do |header,expected|
@@ -22,9 +28,11 @@ Then(/^the response should have the following headers:$/) do |table|
   end
 end
 
-Then(/^I should receive a "(.*?)" response$/) do |status|
+Then(/^I should return a "(.*?)" response$/) do |status|
   client.last_response.status.should eq(status.to_i)
 end
+
+### reponse body
 
 Then(/^the body should be a json object having the following keys:$/) do |table|
   obj  = client.json_body

@@ -1,10 +1,10 @@
 Feature: Pinging the service
-  In order to know whether the Persister service is available
-  As another software component
-  I want to ping it
+  In order to let other components know whether I'm available
+  As the PIPAS persister
+  I want to support a ping service
 
   Scenario: Pinging the RESTful way
 
-    Given I make a GET request to '/'
+    Given I receive a GET request to '/'
 
-    Then  I should receive a "200 Ok" response
+    Then  I should return a "200 Ok" response
