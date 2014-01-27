@@ -8,6 +8,7 @@ group :runtime do
   gem "uuid",    "~> 2.3"
   gem "rack",    "~> 1.5"
   gem "sinatra", "~> 1.4"
+  gem "wlang",   "~> 2.1"
 
   gem "alf-core",   git: "git://github.com/alf-tool/alf-core"
   gem "alf-sql",    git: "git://github.com/alf-tool/alf-sql.git"

@@ -14,6 +14,12 @@ module PipasPersister
 
         # Do not show exceptions on the web interface
         disable :show_exceptions
+
+        # Set the folder for sinatra views
+        set :views, PipasPersister::VIEWS_FOLDER
+
+        # Set the default layout to use with wlang
+        set :wlang, layout: "html5".to_sym
       end
 
     private

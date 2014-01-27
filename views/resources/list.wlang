@@ -1,0 +1,18 @@
+<p>PIPAS persister v${version}, &copy; UCLouvain, 2014</p>
+
+<h2>Resources</h2>
+
+<table class="table">
+  <tr>
+    <th>URI</th>
+    <th>Synopsis</th>
+    <th>Details</th>
+  </tr>
+  *{resources}{
+    <tr>
+      <td>${uri}</td>
+      <td>${synopsis}</td>
+      <td><a href="/resources${uri}">details</a></td>
+    </tr>
+  }
+</table>

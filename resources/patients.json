@@ -1,0 +1,25 @@
+{
+    "uri": "/patients/",
+    "synopsis": "Registered patients",
+    "description": "This collection resources provides a list of registered patients",
+    "remarks": [
+    ],
+    "schema": [{                          //  list of patients
+        "patient_id": "uuid",             //  |- unique identifier of the patient
+        "last_name":  "string",           //  |- patient's last name
+        "first_name": "string",           //  |- patient's first name
+        "gender":     "char"              //  `- patient's gender ('M' or 'F')
+    }],
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the list of patients",
+        "request": {
+          "Accept": "text/plain, application/json"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`"
+        }
+      }
+    ]
+}

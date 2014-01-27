@@ -5,6 +5,8 @@ require 'pg'
 require 'sequel'
 require 'base64'
 require 'digest/sha1'
+require 'tilt'
+require 'wlang'
 
 require_relative 'ext/datetime'
 
@@ -27,6 +29,12 @@ module PipasPersister
 
   # Folder containing seed datasets
   SEEDS_FOLDER = ROOT_FOLDER/'seeds' or raise("Missing seeds folder")
+
+  # Folder containing resource definitions
+  RESOURCES_FOLDER = ROOT_FOLDER/'resources' or raise("Missing resources folder")
+
+  # Folder containing sinatra views
+  VIEWS_FOLDER = ROOT_FOLDER/'views' or raise("Missing views folder")
 
   # In what environment does the component run 
   ENVIRONMENT = ENV['PIPAS_ENV'] || ENV['RACK_ENV'] || "development"

@@ -1,0 +1,67 @@
+<table class="table table-condensed">
+  <tr>
+    <td>URI</td>
+    <td>${uri}</td>
+  </tr>
+  <tr>
+    <td>Synopsis</td>
+    <td>${synopsis}</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>${description}</td>
+  </tr>
+  <tr>
+    <td>Schema</td>
+    <td><pre style="font-size: 80%">${rawschema}</pre></td>
+  </tr>
+  <tr>
+    <td>Remarks</td>
+    <td>
+      <ul>
+        *{remarks}{
+          <li>${self}</li>
+        }
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Services</td>
+    <td>
+      <table class="table table-bordered table-condensed">
+        <tr>
+          <th>Method</th>
+          <th>Description</th>
+          <th>Request headers</th>
+          <th>Response headers</th>
+        </tr>
+        *{services}{
+          <tr>
+            <td>${method}</td>
+            <td>${description}</td>
+            <td>
+              <table class="table table-condensed">
+                *{request.keys}{
+                  <tr>
+                    <td>${self}</td>
+                    <td>${request.${self}}</td>
+                  </tr>
+                }
+              </table>
+            </td>
+            <td>
+              <table class="table table-condensed">
+                *{response.keys}{
+                  <tr>
+                    <td>${self}</td>
+                    <td>${response.${self}}</td>
+                  </tr>
+                }
+              </table>
+            </td>
+          </tr>
+        }
+      </table>
+    </td>
+  </tr>
+</table>

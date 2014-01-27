@@ -170,3 +170,4 @@ DEPENDENCIES
   sinatra (~> 1.4)
   thin (~> 1.6)
   uuid (~> 2.3)
+  wlang (~> 2.1)

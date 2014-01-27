@@ -2,10 +2,6 @@ module PipasPersister
   module Service
     class Facade < Base
 
-      configure do
-        #set :public_folder, PipasPersister::PUBLIC_FOLDER
-      end
-
       get '/' do
         [
           200,

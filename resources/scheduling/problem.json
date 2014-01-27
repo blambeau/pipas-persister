@@ -1,0 +1,73 @@
+{
+    "uri": "/scheduling/problem",
+    "synopsis": "Scheduling problem",
+    "description": "The scheduling problem resource provides the value of every variable participating to the scheduling constraint model.",
+    "remarks": [
+      "In the ideal case, the `treatments/appointments` array has exactly one entry for each step of the plan `treatments/treament_plan/steps`, by joining on `step_id`. However it can also be empty for a new treatment for which no scheduling previously occured. We assume that treatment plans do never change; only those two situations should thus occur in theory.",
+      "The various lists of appointments define the last known solution to the scheduling problem (possibly a previous one). This solution may however be _incomplete_ (e.g. new treatment meanwhile) or even _invalid_ (e.g. new patient unavailability violating a non-fixed appointment)",
+      "The `last_scheduled` entry provides the time at which the last known solution was scheduled. The `last_modified` entry provides the time of the last update to a scheduling variable. Provided the Scheduler meets its specification, the last solution is known to be complete and correct if `last_modified <= last_scheduled`. As explained above, it can be incomplete or incorrect otherwise"
+    ],
+    "schema": {                                //  scheduling problem
+        "problem_key":     "uuid",             //  |- unique identifier of the problem
+        "last_scheduled":  "timestamp",        //  |- when the solution has been computed,
+        "last_modified":   "timestamp",        //  |- time of the last change to a variable
+        "service": {                           //  |- information about the service
+            "bed_availabilities": [{           //  |  |- information about available beds
+                "week_day": "string",          //  |  |  |- name of the day in the week,
+                "quantity": "integer"          //  |  |  `- number of beds available that day
+            }],                                //  |  |
+            "nurse_availabilities": [{         //  |  |- information about available nurses
+                "week_day": "string",          //  |  |  |- name of the day in the week
+                "quantity": "integer"          //  |  |  `- number of nurses available that day
+            }],                                //  |  |
+            "hours_per_day": [{                //  |  `- information about time slots
+                "week_day": "string",          //  |     |- name of the day in the week
+                "quantity": "integer"          //  |     `- number of working hours that day
+            }]                                 //  |
+        },                                     //  |
+        "treatments": [{                       //  |- information about all (ongoing) treatments
+            "treatment_id": "uuid",            //  |  |- unique identifier of the treatment
+            "diagnosis_date": "date",          //  |  |- date of the diagnosis
+            "earliest_start_date": "date",     //  |  |- earliest date for the first delivery step
+            "latest_start_date": "date",       //  |  |- latest date for the first delivery step,
+            "appointments": [{                 //  |  |- information about delivery appointments (possibly empty!)
+                "appointment_id": "uuid",      //  |  |  |- unique identifier of the appointment
+                "step_id": "uuid",             //  |  |  |- unique identifier of the delivery step
+                "scheduled_at": "timestamp",   //  |  |  |- time of the delivery appointment,
+                "fixed": "boolean"             //  |  |  `- true means appointment may not change
+            }],                                //  |  |
+            "unavailabilities": [{             //  |  `- information about patient unavailabilities
+                "unavailable_at": "date"       //  |     `- date (full day) where patient is unavailable
+            }],                                //  |
+            "treatment_plan": {                //  `- information about the treatment plan followed
+                "tplan_id": "uuid",            //     |- unique identifier of the treatment plan
+                "duration": "integer",         //     |- optimal duration of the entire treatment in days
+                "prescribed_dose": "float",    //     |- optimal total prescribed dose
+                "steps": [{                    //     `- steps of the treatment plan (not ordered!)
+                    "step_id": "uuid",         //        |- unique identifier of the step in the plan
+                    "kind": "string",          //        |- "rest"ing period or dose "delivery"
+                    "position": "integer",     //        |- position of the step in the steps
+                    "duration": "float",       //        |- duration of the step in days
+                    "nurse_load": "float",     //        |- load in terms of nurse hours
+                    "bed_load": "float"        //        `- load in terms of bed hours
+                }]
+            }
+        }]
+    },
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the current scheduling problem to solve",
+        "request": {
+          "Accept": "text/plain, application/json",
+          "If-Modified-Since": "Conditional GET from a previous `Last-Modified`",
+          "If-None-Match": "Conditional GET from a previous `ETag`"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`",
+          "ETag": "Unique etag of the scheduling problem resource instance",
+          "Last-Modified": "Last modification to the value of a constraint variable"
+        }
+      }
+    ]
+}

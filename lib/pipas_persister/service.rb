@@ -7,6 +7,7 @@ require_relative 'service/scheduling'
 require_relative 'service/patients'
 require_relative 'service/facade'
 require_relative 'service/protocol'
+require_relative 'service/resources'
 
 module PipasPersister
   module Service
@@ -26,6 +27,10 @@ module PipasPersister
 
       # Implement the lock protocol and accuracy timestamp header
       use Service::Protocol
+
+      map '/resources' do
+        run Service::Resources
+      end
 
       map '/scheduling' do
         run Service::Scheduling

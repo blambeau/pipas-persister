@@ -55,3 +55,23 @@ Then(/^all objects in this array should have the keys:$/) do |table|
     elm.keys.sort.should eq(keys)
   end
 end
+
+Then(/^the resource URI should be a valid service$/) do
+  obj = client.json_body
+  obj.each do |res|
+    c = client.dup
+    c.get(res["uri"])
+    c.last_response.status.should eq(200)
+  end
+end
+
+Then(/^the resource links should all point valid services$/) do
+  obj = client.json_body
+  obj.each do |res|
+    res["links"].each do |link|
+      c = client.dup
+      c.get(link["uri"])
+      c.last_response.status.should eq(200)
+    end
+  end
+end
