@@ -3,7 +3,7 @@ module PipasPersister
     module Base
       include Alf::Viewpoint
 
-      native :protocol_timestamps
+      native :scheduling
 
       native :patients
 

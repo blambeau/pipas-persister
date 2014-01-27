@@ -19,6 +19,7 @@ Feature: Serving the scheduling problem
       | application/json | Wed, 01 Jan 2014 12:15:00 GMT |
 
     And the body should be a json object having the keys:
+      |  scheduling_id |
       |        service |
       |     treatments |
       |  last_modified |
@@ -45,6 +46,7 @@ Feature: Serving the scheduling problem
       | application/json | Wed, 01 Jan 2014 12:15:00 GMT |
 
     And the body should be a json object having the keys:
+      |  scheduling_id |
       |        service |
       |     treatments |
       |  last_modified |
