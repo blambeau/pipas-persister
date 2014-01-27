@@ -1,0 +1,45 @@
+{
+    "uri": "/scheduling/solution",
+    "synopsis": "Scheduling solution",
+    "description": "The scheduling solution resource captures the Scheduler solution to a scheduling problem",
+    "remarks": [
+      "The various lists of appointments define the last known solution to the scheduling problem (possibly a previous one). This solution may however be _incomplete_ (e.g. new treatment meanwhile) or even _invalid_ (e.g. new patient unavailability violating a non-fixed appointment)",
+      "The `last_scheduled` entry provides the time at which the last known solution was scheduled. The `last_modified` entry provides the time of the last update to a scheduling variable. Provided the Scheduler meets its specification, the last solution is known to be complete and correct if `last_modified <= last_scheduled`. As explained above, it can be incomplete or incorrect otherwise"
+    ],
+    "schema": {                                //  scheduling problem
+        "problem_key":    "uuid",              //  |- unique identifier of the problem solved
+        "last_scheduled": "timestamp",         //  |- when the solution has been computed,
+        "last_modified":  "timestamp",         //  |- time of the last change to a variable
+        "service": {                           //  |- information about the service
+            "rdi": "float",                    //  |- average service RDI
+            "bed_load": "float",               //  |- average bed load
+            "nurse_load": "float"              //  |- average nurse load
+        },                                     //  |
+        "treatments": [{                       //  |- information about scheduling of (ongoing) treatments
+            "treatment_id": "uuid",            //     |- unique identifier of the treatment
+            "rdi": "float",                    //     |- resulting patient RDI
+            "appointments": [{                 //     |- information about delivery appointments (possibly empty!)
+                "appointment_id": "uuid",      //        |- unique identifier of the appointment
+                "step_id": "uuid",             //        |- unique identifier of the delivery step
+                "scheduled_at": "timestamp",   //        |- time of the delivery appointment,
+                "fixed": "boolean"             //        `- true means appointment may not change
+            }]
+        }]
+    },
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the current scheduling solution",
+        "request": {
+          "Accept": "text/plain, application/json",
+          "If-Modified-Since": "Conditional GET from a previous `Last-Modified`",
+          "If-None-Match": "Conditional GET from a previous `ETag`"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`",
+          "ETag": "Unique etag of the scheduling problem resource instance",
+          "Last-Modified": "Last modification to the value of a constraint variable"
+        }
+      }
+    ]
+}

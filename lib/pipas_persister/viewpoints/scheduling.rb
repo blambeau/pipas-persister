@@ -3,6 +3,12 @@ module PipasPersister
     module Scheduling
       include Alf::Viewpoint
 
+      SERVICE_SOLUTION = {
+        "rdi"        => 0.0,
+        "nurse_load" => 0.0,
+        "bed_load"   => 0.0
+      }
+
       depends :base, Base
 
     ### schedule (facade)
@@ -12,10 +18,15 @@ module PipasPersister
       end
 
       def problems
-        extend(
-          base.scheduling,
+        extend(base.scheduling,
           service:    ->(t){ service.to_relation.tuple_extract },
-          treatments: ->(t){ treatments })
+          treatments: ->(t){ problem_treatments })
+      end
+
+      def solutions
+        extend(base.scheduling,
+          service: SERVICE_SOLUTION,
+          treatments: ->(t){ solution_treatments })
       end
 
     ### about service
@@ -29,7 +40,13 @@ module PipasPersister
 
     ### about treatments
 
-      def treatments
+      def solution_treatments
+        treatments = project(base.treatments, [:treatment_id])
+        treatments = image(treatments, base.appointments, :appointments)
+        treatments
+      end
+
+      def problem_treatments
         unavailabilities = project(base.patient_unavailabilities, [:treatment_id, :unavailable_at])
         treatments = allbut(base.treatments, [:patient_id])
         treatments = image(treatments, base.appointments, :appointments)
