@@ -2,12 +2,11 @@ module PipasPersister
   module Service
     class Facade < Base
 
+      README = PipasPersister::ROOT_FOLDER/"README.md"
+
       get '/' do
-        [
-          200,
-          {'Content-Type' => "text/plain"},
-          ["Pipas Persister v#{PipasPersister::VERSION}, (c) UCLouvain, 2014"]
-        ]
+        intro = Kramdown::Document.new(README.read).to_html
+        wlang :index, locals: {intro: intro}
       end
 
     end # class Facade

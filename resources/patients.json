@@ -1,7 +1,7 @@
 {
     "uri": "/patients/",
     "synopsis": "Registered patients",
-    "description": "This collection resources provides a list of registered patients",
+    "description": "This collection resource captures the list of registered patients",
     "remarks": [
     ],
     "schema": [{                          //  list of patients

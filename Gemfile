@@ -2,13 +2,14 @@ ruby '1.9.3'
 source "http://rubygems.org"
 
 group :runtime do
-  gem "sequel",  "~> 4.4"
-  gem "pg",      "0.16.0"
-  gem "thin",    "~> 1.6"
-  gem "uuid",    "~> 2.3"
-  gem "rack",    "~> 1.5"
-  gem "sinatra", "~> 1.4"
-  gem "wlang",   "~> 2.1"
+  gem "sequel",   "~> 4.4"
+  gem "pg",       "0.16.0"
+  gem "thin",     "~> 1.6"
+  gem "uuid",     "~> 2.3"
+  gem "rack",     "~> 1.5"
+  gem "sinatra",  "~> 1.4"
+  gem "wlang",    "~> 2.1"
+  gem "kramdown", "~> 0.13.4"
 
   gem "alf-core",   git: "git://github.com/alf-tool/alf-core"
   gem "alf-sql",    git: "git://github.com/alf-tool/alf-sql.git"

@@ -7,6 +7,7 @@ require 'base64'
 require 'digest/sha1'
 require 'tilt'
 require 'wlang'
+require 'kramdown'
 
 require_relative 'ext/datetime'
 
