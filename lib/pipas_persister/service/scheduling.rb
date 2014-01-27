@@ -12,6 +12,9 @@ module PipasPersister
         # Set the Last-Modified header
         last_modified tuple.last_modified
 
+        # Set must-revalidate to Cache-Control
+        cache_control :public, :must_revalidate
+
         # Return the current scheduling problem
         respond_with tuple_extract{
           scheduling.problems

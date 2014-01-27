@@ -15,8 +15,8 @@ Feature: Serving the scheduling problem
     Then I should return a "200 Ok" response
 
     And the response should have the headers:
-      | Content-Type     | Last-Modified                 | ETag                                       |
-      | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "6bedc894aa7b017297607a541cf18b6bef9b3c8d" |
+      | Content-Type     | Last-Modified                 | ETag                                       | Cache-Control           |
+      | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "6bedc894aa7b017297607a541cf18b6bef9b3c8d" | public, must-revalidate |
 
     And the body should be a json object having the keys:
       |    problem_key |
