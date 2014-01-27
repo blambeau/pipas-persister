@@ -6,13 +6,13 @@
   <tr>
     <th>URI</th>
     <th>Synopsis</th>
-    <th>Details</th>
+    <th>Detailed documentation</th>
   </tr>
   *{resources}{
     <tr>
-      <td>${uri}</td>
+      <td><a href="${uri}">${uri}</a></td>
       <td>${synopsis}</td>
-      <td><a href="/resources${uri}">details</a></td>
+      <td><a href="/resources${uri}">documentation</a></td>
     </tr>
   }
 </table>

@@ -1,7 +1,7 @@
 <table class="table table-condensed">
   <tr>
     <td>URI</td>
-    <td>${uri}</td>
+    <td><a href="${uri}">${uri}</a></td>
   </tr>
   <tr>
     <td>Synopsis</td>
