@@ -7,7 +7,7 @@ module PipasPersister
         tuple = tuple_extract{ scheduling.identity }
 
         # Set the HTTP ETag
-        etag compute_etag(tuple.scheduling_id, tuple.last_modified)
+        etag compute_etag(tuple.problem_key, tuple.last_modified)
 
         # Set the Last-Modified header
         last_modified tuple.last_modified

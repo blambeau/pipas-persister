@@ -19,7 +19,7 @@ Feature: Serving the scheduling problem
       | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "6bedc894aa7b017297607a541cf18b6bef9b3c8d" |
 
     And the body should be a json object having the keys:
-      |  scheduling_id |
+      |    problem_key |
       |        service |
       |     treatments |
       |  last_modified |
