@@ -9,7 +9,9 @@ module PipasPersister
 
       def problems
         extend(
-          project(base.protocol_timestamps, [:scheduled_at]),
+          rename(allbut(base.protocol_timestamps, [:key]),
+            :accuracy_timestamp => :last_modified,
+            :scheduled_at       => :last_scheduled),
           service:    ->(t){ service.to_relation.tuple_extract },
           treatments: ->(t){ treatments })
       end

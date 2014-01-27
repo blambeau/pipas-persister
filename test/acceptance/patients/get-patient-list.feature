@@ -8,20 +8,19 @@ Feature: List of registered patients
 
   Scenario: Getting the list of patients on the RESTful interface
 
-    Given I receive a GET request to '/patients/' with the following headers:
+    Given I receive a GET request to '/patients/' with the headers:
       | Accept           |
       | application/json |
 
     Then I should return a "200 Ok" response
 
-    And the response should have the following headers:
+    And the response should have the headers:
       | Content-Type     |
       | application/json |
 
     And the body should be a json array
 
-    And all objects in this array should have the following keys:
-      | key          |
+    And all objects in this array should have the keys:
       |   patient_id |
       |   first_name |
       |    last_name |

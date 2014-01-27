@@ -9,7 +9,7 @@ Given(/^I receive a GET request to '(.*?)'$/) do |url|
   client.get(url)
 end
 
-Given(/^I receive a GET request to '(.*?)' with the following headers:$/) do |url, table|
+Given(/^I receive a GET request to '(.*?)' with the headers:$/) do |url, table|
   client.with_headers(table.hashes.first) do
     client.get(url)
   end
@@ -17,7 +17,7 @@ end
 
 ### reponse status and headers
 
-Then(/^the response should have the following headers:$/) do |table|
+Then(/^the response should have the headers:$/) do |table|
   table.hashes.first.each_pair do |header,expected|
     value = client.last_response[header]
     if expected =~ /^\/(.*?)\/$/
@@ -34,9 +34,9 @@ end
 
 ### reponse body
 
-Then(/^the body should be a json object having the following keys:$/) do |table|
+Then(/^the body should be a json object having the keys:$/) do |table|
   obj  = client.json_body
-  keys = table.rows.map(&:first).sort
+  keys = table.raw.map(&:first).sort
   obj.should be_a(Hash)
   obj.keys.sort.should eq(keys)
 end
@@ -46,10 +46,10 @@ Then(/^the body should be a json array$/) do
   obj.should be_a(Array)
 end
 
-Then(/^all objects in this array should have the following keys:$/) do |table|
+Then(/^all objects in this array should have the keys:$/) do |table|
   obj = client.json_body
   obj.should be_a(Array)
-  keys = table.rows.map(&:first).sort
+  keys = table.raw.map(&:first).sort
   obj.each do |elm|
     elm.should be_a(Hash)
     elm.keys.sort.should eq(keys)

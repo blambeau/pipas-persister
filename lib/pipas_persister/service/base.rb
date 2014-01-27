@@ -25,8 +25,10 @@ module PipasPersister
       end
 
       def tuple_response(&bl)
+        tuple = tuple_extract(&bl)
+        last_modified(tuple[:last_modified]) if tuple[:last_modified]
         Alf::Rack::Response.new(env){|r|
-          r.body = tuple_extract(&bl)
+          r.body = tuple
         }.finish
       end
 
