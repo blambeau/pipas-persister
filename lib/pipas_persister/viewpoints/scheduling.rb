@@ -7,6 +7,10 @@ module PipasPersister
 
     ### schedule (facade)
 
+      def identity
+        base.scheduling
+      end
+
       def problems
         extend(
           base.scheduling,

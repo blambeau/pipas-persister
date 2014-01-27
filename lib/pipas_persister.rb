@@ -3,6 +3,8 @@ require 'path'
 require 'time'
 require 'pg'
 require 'sequel'
+require 'base64'
+require 'digest/sha1'
 
 require_relative 'ext/datetime'
 
@@ -42,6 +44,9 @@ module PipasPersister
 
   # Alf database object
   ALF_DATABASE = ::Alf.database(SEQUEL_DATABASE)
+
+  # UUID
+  UUID_GENERATOR = ::UUID.new.generate
 
 end # module PipasPersister
 require_relative 'pipas_persister/viewpoints'

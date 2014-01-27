@@ -4,7 +4,16 @@ module PipasPersister
       include Alf::Rack::Helpers
 
       get '/problem' do
-        tuple_response {
+        tuple = tuple_extract{ scheduling.identity }
+
+        # Set the HTTP ETag
+        etag compute_etag(tuple.scheduling_id, tuple.last_modified)
+
+        # Set the Last-Modified header
+        last_modified tuple.last_modified
+
+        # Return the current scheduling problem
+        respond_with tuple_extract{
           scheduling.problems
         }
       end

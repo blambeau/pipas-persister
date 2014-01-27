@@ -21,7 +21,7 @@ Then(/^the response should have the headers:$/) do |table|
   table.hashes.first.each_pair do |header,expected|
     value = client.last_response[header]
     if expected =~ /^\/(.*?)\/$/
-      value.should =~ Regexp.new($1)
+      (Regexp.compile($1) =~ value).should_not be_nil
     else
       value.to_s.should eq(expected.to_s)
     end

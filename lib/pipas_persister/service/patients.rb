@@ -4,7 +4,7 @@ module PipasPersister
       include Alf::Rack::Helpers
 
       get '/' do
-        relvar_response {
+        respond_with relvar{
           base.patients
         }
       end

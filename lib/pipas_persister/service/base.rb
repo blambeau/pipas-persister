@@ -18,18 +18,16 @@ module PipasPersister
 
     private
 
-      def relvar_response(&bl)
+      def respond_with(body)
         Alf::Rack::Response.new(env){|r|
-          r.body = relvar(&bl)
+          r.body = body
         }.finish
       end
 
-      def tuple_response(&bl)
-        tuple = tuple_extract(&bl)
-        last_modified(tuple[:last_modified]) if tuple[:last_modified]
-        Alf::Rack::Response.new(env){|r|
-          r.body = tuple
-        }.finish
+      def compute_etag(*args)
+        etag = args.map{|s| s.is_a?(Time) ? s.iso8601(6) : s.to_s }.join(" - ")
+        etag = Digest::SHA1.hexdigest(etag)
+        etag
       end
 
     end # class Facade

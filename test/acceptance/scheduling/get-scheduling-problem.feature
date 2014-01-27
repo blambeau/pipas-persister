@@ -15,8 +15,8 @@ Feature: Serving the scheduling problem
     Then I should return a "200 Ok" response
 
     And the response should have the headers:
-      | Content-Type     |                 Last-Modified |
-      | application/json | Wed, 01 Jan 2014 12:15:00 GMT |
+      | Content-Type     | Last-Modified                 | ETag                                       |
+      | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "6bedc894aa7b017297607a541cf18b6bef9b3c8d" |
 
     And the body should be a json object having the keys:
       |  scheduling_id |
@@ -25,10 +25,18 @@ Feature: Serving the scheduling problem
       |  last_modified |
       | last_scheduled |
 
+  Scenario: Responding when If-None-Match is specified and not modified
+
+    Given I receive a GET request to '/scheduling/problem' with the headers:
+      | Accept           |                             If-None-Match |
+      | application/json | "6bedc894aa7b017297607a541cf18b6bef9b3c8d"|
+
+    Then I should return a "304 Not Modified" response
+
   Scenario: Responding when If-Modified-Since is specified and not modified
 
     Given I receive a GET request to '/scheduling/problem' with the headers:
-      | Accept           |             If-Modified-Since |
+      | Accept           | If-Modified-Since             |
       | application/json | Wed, 01 Jan 2014 12:15:00 GMT |
 
     Then I should return a "304 Not Modified" response
@@ -36,18 +44,15 @@ Feature: Serving the scheduling problem
   Scenario: Responding when If-Modified-Since is specified and modified
 
     Given I receive a GET request to '/scheduling/problem' with the headers:
-      | Accept           |             If-Modified-Since |
+      | Accept           | If-Modified-Since             |
       | application/json | Wed, 01 Jan 2014 12:14:00 GMT |
 
     Then I should return a "200 Ok" response
 
-    And the response should have the headers:
-      | Content-Type     |                 Last-Modified |
-      | application/json | Wed, 01 Jan 2014 12:15:00 GMT |
+  Scenario: Responding when If-None-Match is specified and modified
 
-    And the body should be a json object having the keys:
-      |  scheduling_id |
-      |        service |
-      |     treatments |
-      |  last_modified |
-      | last_scheduled |
+    Given I receive a GET request to '/scheduling/problem' with the headers:
+      | Accept           | If-None-Match |
+      | application/json |         "foo" |
+
+    Then I should return a "200 Ok" response
