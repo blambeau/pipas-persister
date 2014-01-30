@@ -20,9 +20,9 @@
                 "week_day": "string",          //  |  |  |- name of the day in the week
                 "quantity": "integer"          //  |  |  `- number of nurses available that day
             }],                                //  |  |
-            "hours_per_day": [{                //  |  `- information about time slots
+            "minutes_per_day": [{              //  |  `- information about time slots
                 "week_day": "string",          //  |     |- name of the day in the week
-                "quantity": "integer"          //  |     `- number of working hours that day
+                "quantity": "integer"          //  |     `- number of working minutes that day
             }]                                 //  |
         },                                     //  |
         "treatments": [{                       //  |- information about all (ongoing) treatments
@@ -41,15 +41,15 @@
             }],                                //  |
             "treatment_plan": {                //  `- information about the treatment plan followed
                 "tplan_id": "uuid",            //     |- unique identifier of the treatment plan
-                "duration": "integer",         //     |- optimal duration of the entire treatment in days
+                "duration": "integer",         //     |- optimal duration of the entire treatment in minutes
                 "prescribed_dose": "float",    //     |- optimal total prescribed dose
                 "steps": [{                    //     `- steps of the treatment plan (not ordered!)
                     "step_id": "uuid",         //        |- unique identifier of the step in the plan
                     "kind": "string",          //        |- "rest"ing period or dose "delivery"
                     "position": "integer",     //        |- position of the step in the steps
-                    "duration": "float",       //        |- duration of the step in days
-                    "nurse_load": "float",     //        |- load in terms of nurse hours
-                    "bed_load": "float"        //        `- load in terms of bed hours
+                    "duration": "integer",     //        |- duration of the step in minutes
+                    "nurse_load": "integer",   //        |- load in terms of "minutes of nurse work"
+                    "bed_load": "integer"      //        `- load in terms of "minutes of bed required"
                 }]
             }
         }]

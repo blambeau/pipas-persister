@@ -34,7 +34,7 @@ module PipasPersister
         extend(Relation::DEE,
           bed_availabilities:   ->(t){ base.bed_availabilities   },
           nurse_availabilities: ->(t){ base.nurse_availabilities },
-          hours_per_day:        ->(t){ base.hours_per_day })
+          minutes_per_day:      ->(t){ base.minutes_per_day })
       end
 
     ### about treatments
@@ -58,9 +58,6 @@ module PipasPersister
 
     ### about treatment plans
 
-      DELI_STEP_CONSTANTS = { kind: "delivery", duration: 0.0 }.freeze
-      REST_STEP_CONSTANTS = { kind: "rest",   nurse_load: 0.0, bed_load: 0.0, prescribed_dose: 0.0 }.freeze
-
       def treatment_plans
         plans = project(base.treatment_plans, [:tplan_id])
         plans = image(plans, treatment_plan_steps, :steps)
@@ -77,8 +74,15 @@ module PipasPersister
 
       def treatment_plan_steps
         union(
-          extend(base.rest_steps, REST_STEP_CONSTANTS),
-          extend(base.delivery_steps, DELI_STEP_CONSTANTS))
+          extend(base.rest_steps,
+            kind: "rest",
+            nurse_load: 0,                  # rest steps do not consume nurse minutes
+            bed_load: 0,                    # rest steps do not consume bed minutes
+            prescribed_dose: 0.0),          # rest steps do not deliver dosage
+          extend(base.delivery_steps,
+            kind: "delivery",
+            duration: ->(t){ t.bed_load })  # delivery steps take as many minutes as bed load
+        )
       end
 
     end # module Scheduling

@@ -19,7 +19,7 @@ module PipasPersister
 
       native :bed_availabilities
       native :nurse_availabilities
-      native :hours_per_day
+      native :minutes_per_day
 
     end # module Base
   end # module Viewpoint
