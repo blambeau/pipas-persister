@@ -31,7 +31,6 @@
             "earliest_start_date": "date",     //  |  |- earliest date for the first delivery step
             "latest_start_date": "date",       //  |  |- latest date for the first delivery step,
             "appointments": [{                 //  |  |- information about delivery appointments (possibly empty!)
-                "appointment_id": "uuid",      //  |  |  |- unique identifier of the appointment
                 "step_id": "uuid",             //  |  |  |- unique identifier of the delivery step
                 "scheduled_at": "timestamp",   //  |  |  |- time of the delivery appointment,
                 "fixed": "boolean"             //  |  |  `- true means appointment may not change

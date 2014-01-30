@@ -50,7 +50,7 @@ module PipasPersister
       def problem_treatments
         unavailabilities = project(base.patient_unavailabilities, [:treatment_id, :unavailable_at])
         treatments = allbut(base.treatments, [:patient_id])
-        treatments = image(treatments, base.appointments, :appointments)
+        treatments = image(treatments, allbut(base.appointments, [:appointment_id]), :appointments)
         treatments = image(treatments, unavailabilities, :unavailabilities)
         treatments = detail(treatments, treatment_plans, :treatment_plan)
         treatments
