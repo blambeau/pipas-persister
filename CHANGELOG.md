@@ -1,6 +1,9 @@
 # v0.2.0 -- FIX ME
 
-* Nothing here yet.
+According to changes agreed at the PIPAS meeting on 28th of January 2014.
+
+* Removed `service/rdi`, `treatments/appointments/appointment_id' and
+  `treatments/appointments/fixed` from the `/scheduling/solution` resource.
 
 # v0.1.0 -- 2014-01-27
 

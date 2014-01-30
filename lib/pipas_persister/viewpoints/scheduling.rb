@@ -4,7 +4,6 @@ module PipasPersister
       include Alf::Viewpoint
 
       SERVICE_SOLUTION = {
-        "rdi"        => 0.0,
         "nurse_load" => 0.0,
         "bed_load"   => 0.0
       }
@@ -42,7 +41,9 @@ module PipasPersister
 
       def solution_treatments
         treatments = project(base.treatments, [:treatment_id])
-        treatments = image(treatments, base.appointments, :appointments)
+        treatments = image(treatments,
+          allbut(base.appointments, [:appointment_id, :fixed]),
+          :appointments)
         treatments
       end
 

@@ -11,18 +11,15 @@
         "last_scheduled": "timestamp",         //  |- when the solution has been computed,
         "last_modified":  "timestamp",         //  |- time of the last change to a variable
         "service": {                           //  |- information about the service
-            "rdi": "float",                    //  |- average service RDI
             "bed_load": "float",               //  |- average bed load
             "nurse_load": "float"              //  |- average nurse load
         },                                     //  |
-        "treatments": [{                       //  |- information about scheduling of (ongoing) treatments
+        "treatments": [{                       //  `- information about scheduling of (ongoing) treatments
             "treatment_id": "uuid",            //     |- unique identifier of the treatment
             "rdi": "float",                    //     |- resulting patient RDI
-            "appointments": [{                 //     |- information about delivery appointments (possibly empty!)
-                "appointment_id": "uuid",      //        |- unique identifier of the appointment
+            "appointments": [{                 //     `- information about delivery appointments (possibly empty!)
                 "step_id": "uuid",             //        |- unique identifier of the delivery step
-                "scheduled_at": "timestamp",   //        |- time of the delivery appointment,
-                "fixed": "boolean"             //        `- true means appointment may not change
+                "scheduled_at": "timestamp"    //        `- time of the delivery appointment
             }]
         }]
     },
