@@ -20,6 +20,7 @@ Feature: Serving the scheduling problem
 
     And the body should be a json object having the keys:
       |    problem_key |
+      |   current_time |
       |        service |
       |     treatments |
       |  last_modified |

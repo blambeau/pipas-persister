@@ -9,6 +9,7 @@
     ],
     "schema": {                                //  scheduling problem
         "problem_key":     "uuid",             //  |- unique identifier of the problem
+        "current_time":    "timestamp",        //  |- the current server time
         "last_scheduled":  "timestamp",        //  |- when the solution has been computed,
         "last_modified":   "timestamp",        //  |- time of the last change to a variable
         "service": {                           //  |- information about the service

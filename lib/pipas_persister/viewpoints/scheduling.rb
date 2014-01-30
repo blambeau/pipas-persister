@@ -18,6 +18,7 @@ module PipasPersister
 
       def problems
         extend(base.scheduling,
+          current_time: Time.now,
           service:    ->(t){ service.to_relation.tuple_extract },
           treatments: ->(t){ problem_treatments })
       end

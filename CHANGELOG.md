@@ -2,6 +2,9 @@
 
 According to changes agreed at the PIPAS meeting on 28th of January 2014.
 
+* Added `current_time` in `/scheduling/problem` that serves the current server
+  time.
+
 * Removed `treatments/appointments/appointment_id` from `/scheduling/problem`.
 
 * Removed `service/rdi`, `treatments/appointments/appointment_id' and
