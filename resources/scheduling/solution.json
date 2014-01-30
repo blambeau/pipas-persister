@@ -16,7 +16,7 @@
         },                                     //  |
         "treatments": [{                       //  `- information about scheduling of (ongoing) treatments
             "treatment_id": "uuid",            //     |- unique identifier of the treatment
-            "rdi": "float",                    //     |- resulting patient RDI
+            "rdi": "float",                    //     |- resulting patient RDI (represented as a float between 0.0 to 1.0)
             "appointments": [{                 //     `- information about delivery appointments (possibly empty!)
                 "step_id": "uuid",             //        |- unique identifier of the delivery step
                 "scheduled_at": "timestamp"    //        `- time of the delivery appointment
