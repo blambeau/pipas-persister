@@ -35,7 +35,8 @@ module PipasPersister
         extend(Relation::DEE,
           bed_availabilities:   ->(t){ base.bed_availabilities   },
           nurse_availabilities: ->(t){ base.nurse_availabilities },
-          minutes_per_day:      ->(t){ base.minutes_per_day })
+          minutes_per_day:      ->(t){ base.minutes_per_day },
+          treatment_plans:      ->(t){ treatment_plans })
       end
 
     ### about treatments
@@ -53,7 +54,6 @@ module PipasPersister
         treatments = allbut(base.treatments, [:patient_id])
         treatments = image(treatments, allbut(base.appointments, [:appointment_id]), :appointments)
         treatments = image(treatments, unavailabilities, :unavailabilities)
-        treatments = detail(treatments, treatment_plans, :treatment_plan)
         treatments
       end
 

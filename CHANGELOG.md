@@ -5,6 +5,11 @@ According to changes agreed at the PIPAS meeting on 28th of January 2014.
 * Added `current_time` in `/scheduling/problem` that serves the current server
   time.
 
+* To avoid serious redundancy in `/scheduling/problem`, treatment plans are
+  now provided in `service/treatment_plans` rather than repeated in every
+  treatment. The treatment plan of each treatment if referenced through its
+  uuid in `treatments/tplan_id`.
+
 * Removed `treatments/appointments/appointment_id` from `/scheduling/problem`.
 
 * Removed `service/rdi`, `treatments/appointments/appointment_id' and

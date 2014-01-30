@@ -24,34 +24,35 @@
             "minutes_per_day": [{              //  |  `- information about time slots
                 "week_day": "string",          //  |     |- name of the day in the week
                 "quantity": "integer"          //  |     `- number of working minutes that day
+            }],                                //  |
+            "treatment_plans": [{              //  |- information about available treatment plans
+                "tplan_id": "uuid",            //  |  |- unique identifier of the treatment plan
+                "duration": "integer",         //  |  |- optimal duration of the entire treatment in minutes
+                "prescribed_dose": "float",    //  |  |- optimal total prescribed dose
+                "steps": [{                    //  |  `- steps of the treatment plan (not ordered!)
+                    "step_id": "uuid",         //  |     |- unique identifier of the step in the plan
+                    "kind": "string",          //  |     |- "rest"ing period or dose "delivery"
+                    "position": "integer",     //  |     |- position of the step in the steps
+                    "duration": "integer",     //  |     |- duration of the step in minutes
+                    "nurse_load": "integer",   //  |     |- load in terms of "minutes of nurse work"
+                    "bed_load": "integer"      //  |     `- load in terms of "minutes of bed required"
+                }]                             //  |
             }]                                 //  |
         },                                     //  |
         "treatments": [{                       //  |- information about all (ongoing) treatments
-            "treatment_id": "uuid",            //  |  |- unique identifier of the treatment
-            "diagnosis_date": "date",          //  |  |- date of the diagnosis
-            "earliest_start_date": "date",     //  |  |- earliest date for the first delivery step
-            "latest_start_date": "date",       //  |  |- latest date for the first delivery step,
-            "appointments": [{                 //  |  |- information about delivery appointments (possibly empty!)
-                "step_id": "uuid",             //  |  |  |- unique identifier of the delivery step
-                "scheduled_at": "timestamp",   //  |  |  |- time of the delivery appointment,
-                "fixed": "boolean"             //  |  |  `- true means appointment may not change
-            }],                                //  |  |
-            "unavailabilities": [{             //  |  `- information about patient unavailabilities
-                "unavailable_at": "date"       //  |     `- date (full day) where patient is unavailable
-            }],                                //  |
-            "treatment_plan": {                //  `- information about the treatment plan followed
-                "tplan_id": "uuid",            //     |- unique identifier of the treatment plan
-                "duration": "integer",         //     |- optimal duration of the entire treatment in minutes
-                "prescribed_dose": "float",    //     |- optimal total prescribed dose
-                "steps": [{                    //     `- steps of the treatment plan (not ordered!)
-                    "step_id": "uuid",         //        |- unique identifier of the step in the plan
-                    "kind": "string",          //        |- "rest"ing period or dose "delivery"
-                    "position": "integer",     //        |- position of the step in the steps
-                    "duration": "integer",     //        |- duration of the step in minutes
-                    "nurse_load": "integer",   //        |- load in terms of "minutes of nurse work"
-                    "bed_load": "integer"      //        `- load in terms of "minutes of bed required"
-                }]
-            }
+            "treatment_id": "uuid",            //     |- unique identifier of the treatment
+            "tplan_id": "uuid",                //     |- unique identifier of the corresponding treatment plan
+            "diagnosis_date": "date",          //     |- date of the diagnosis
+            "earliest_start_date": "date",     //     |- earliest date for the first delivery step
+            "latest_start_date": "date",       //     |- latest date for the first delivery step,
+            "appointments": [{                 //     |- information about delivery appointments (possibly empty!)
+                "step_id": "uuid",             //     |  |- unique identifier of the delivery step
+                "scheduled_at": "timestamp",   //     |  |- time of the delivery appointment,
+                "fixed": "boolean"             //     |  `- true means appointment may not change
+            }],                                //     |
+            "unavailabilities": [{             //     |- information about patient unavailabilities
+                "unavailable_at": "date"       //        `- date (full day) where patient is unavailable
+            }]                                 //
         }]
     },
     "services": [
