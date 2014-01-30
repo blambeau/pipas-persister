@@ -3,7 +3,7 @@
     "synopsis": "Scheduling problem",
     "description": "The scheduling problem resource provides the value of every variable participating to the scheduling constraint model.",
     "remarks": [
-      "In the ideal case, the `treatments/appointments` array has exactly one entry for each step of the plan `treatments/treament_plan/steps`, by joining on `step_id`. However it can also be empty for a new treatment for which no scheduling previously occured. We assume that treatment plans do never change; only those two situations should thus occur in theory.",
+      "In the ideal case, the `treatments/appointments` array has exactly one entry for each step of the plan `service/treament_plans/steps`, by joining on `step_id`. However it can also be empty for a new treatment for which no scheduling previously occured. We assume that treatment plans do never change; only those two situations should thus occur in theory.",
       "The various lists of appointments define the last known solution to the scheduling problem (possibly a previous one). This solution may however be _incomplete_ (e.g. new treatment meanwhile) or even _invalid_ (e.g. new patient unavailability violating a non-fixed appointment)",
       "The `last_scheduled` entry provides the time at which the last known solution was scheduled. The `last_modified` entry provides the time of the last update to a scheduling variable. Provided the Scheduler meets its specification, the last solution is known to be complete and correct if `last_modified <= last_scheduled`. As explained above, it can be incomplete or incorrect otherwise"
     ],
@@ -28,7 +28,7 @@
             "treatment_plans": [{              //  |- information about available treatment plans
                 "tplan_id": "uuid",            //  |  |- unique identifier of the treatment plan
                 "duration": "integer",         //  |  |- optimal duration of the entire treatment in minutes
-                "prescribed_dose": "float",    //  |  |- optimal total prescribed dose
+                "reference_dose": "float",     //  |  |- total reference dose, considered optimal for the plan
                 "steps": [{                    //  |  `- steps of the treatment plan (not ordered!)
                     "step_id": "uuid",         //  |     |- unique identifier of the step in the plan
                     "kind": "string",          //  |     |- "rest"ing period or dose "delivery"

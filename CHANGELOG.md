@@ -25,6 +25,10 @@ According to changes agreed at the PIPAS meeting on 28th of January 2014.
     * `.../steps/bed_load` and `nurse_load` are expressed in minutes too.
   Please note that bed and nurse _availabilities_ is `service/...` are NOT affected by this change.
 
+* To avoid confusion with real delivered dose, the notion of 'should be'
+  delivered dose has been renamed 'reference_dose' in treatment plans and
+  their steps (i.e. `service/treatment_plans(/steps)/reference_dose`).
+
 # v0.1.0 -- 2014-01-27
 
 Initial release.
