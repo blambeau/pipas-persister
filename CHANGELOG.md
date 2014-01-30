@@ -1,6 +1,6 @@
-# v0.2.0 -- FIX ME
+# v0.2.0 -- 2014-01-30
 
-According to changes agreed at the PIPAS meeting on 28th of January 2014.
+According to changes agreed at the PIPAS meeting (28th of January 2014).
 
 * Added `current_time` in `/scheduling/problem` that serves the current server
   time.
