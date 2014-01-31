@@ -1,0 +1,31 @@
+[
+  {
+    "treatment_id": "d90272c0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "delivery_id": "08bfd040-6cb9-0131-3a25-3c07545ed162",
+    "delivered_at": "2014-01-15 09:10:00 +0100",
+    "delivered_dose": 1.0
+  },
+  {
+    "treatment_id": "d9027210-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "delivery_id": "08bfd350-6cb9-0131-3a25-3c07545ed162",
+    "delivered_at": "2014-01-15 09:40:00 +0100",
+    "delivered_dose": 0.75
+  },
+  {
+    "treatment_id": "d9027150-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "delivery_id": "08bfd4a0-6cb9-0131-3a25-3c07545ed162",
+    "delivered_at": "2014-01-15 10:10:00 +0100",
+    "delivered_dose": 0.9
+  },
+  {
+    "treatment_id": "d9026fa0-66ff-0131-38cb-3c07545ed162",
+    "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162",
+    "delivery_id": "08bfd5e0-6cb9-0131-3a25-3c07545ed162",
+    "delivered_at": "2014-01-15 10:40:00 +0100",
+    "delivered_dose": 0.7
+  }
+]
+

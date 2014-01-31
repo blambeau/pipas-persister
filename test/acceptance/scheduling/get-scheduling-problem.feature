@@ -16,7 +16,7 @@ Feature: Serving the scheduling problem
 
     And the response should have the headers:
       | Content-Type     | Last-Modified                 | ETag                                       | Cache-Control           |
-      | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "6bedc894aa7b017297607a541cf18b6bef9b3c8d" | public, must-revalidate |
+      | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "cfe9a646f613ead1a66a43a59cc589c92fba25ca" | public, must-revalidate |
 
     And the body should be a json object having the keys:
       |    problem_key |
@@ -30,7 +30,7 @@ Feature: Serving the scheduling problem
 
     Given I receive a GET request to '/scheduling/problem' with the headers:
       | Accept           |                             If-None-Match |
-      | application/json | "6bedc894aa7b017297607a541cf18b6bef9b3c8d"|
+      | application/json | "cfe9a646f613ead1a66a43a59cc589c92fba25ca"|
 
     Then I should return a "304 Not Modified" response
 
