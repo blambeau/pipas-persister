@@ -1,3 +1,7 @@
+# v0.3.0 -- 2014-01-31
+
+* Added `/service/planning` resource.
+
 # v0.2.0 -- 2014-01-30
 
 According to changes agreed at the PIPAS meeting (28th of January 2014).
