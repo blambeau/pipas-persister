@@ -62,4 +62,5 @@ module PipasPersister
   UUID_GENERATOR = ::UUID.new.generate
 
 end # module PipasPersister
+require_relative 'pipas_persister/seeder'
 require_relative 'pipas_persister/viewpoints'

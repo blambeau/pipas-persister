@@ -2,7 +2,6 @@ namespace :db do
   ROOT      = PipasPersister::ROOT_FOLDER
   DB_CONFIG = PipasPersister::DATABASE_CONFIG
   SEQUEL_DB = PipasPersister::SEQUEL_DATABASE
-  DB        = PipasPersister::ALF_DATABASE
 
   def pg_cmd(cmd)
     "#{cmd}"
@@ -12,36 +11,6 @@ namespace :db do
     cmd = cmds.join("\n")
     puts cmd
     system cmd
-  end
-
-  def seed(from)
-    folder = ROOT/"seeds/#{from}"
-
-    # load metadata and install parent dataset if any
-    metadata = (folder/"metadata.json").load
-    if parent = metadata["inherits"]
-      seed(parent)
-    end
-
-    # load files in order
-    files = folder.glob("*.json").reject{|f| f.basename.to_s =~ /^metadata/ }.sort
-    names = files.map{|f|
-      f.basename.rm_ext.to_s[/^\d+-(.*)/, 1].gsub(/-/, '_')
-    }
-    pairs = files.zip(names)
-
-    # Truncate tables then fill them
-    puts "--- Seeding `#{from}`"
-    DB.connect do |conn|
-      names.reverse.each do |name|
-        puts "Removing from #{name}"
-        conn.relvar(name).delete
-      end
-      pairs.each do |file, name|
-        puts "Seeding #{name}"
-        conn.relvar(name).affect(file.load)
-      end
-    end
   end
 
   desc "Drops the database (USE WITH CARE)"
@@ -64,7 +33,7 @@ namespace :db do
 
   desc "Seed the database (USE WITH CARE)"
   task :seed, :from do |t,args|
-    seed(args[:from] || 'initial-state')
+    PipasPersister::Seeder.call(args[:from] || 'initial-state')
   end
 
   desc "Rebuild the database (USE WITH CARE)"
