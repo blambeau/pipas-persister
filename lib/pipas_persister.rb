@@ -59,8 +59,14 @@ module PipasPersister
   ALF_DATABASE = ::Alf.database(SEQUEL_DATABASE)
 
   # UUID
-  UUID_GENERATOR = ::UUID.new.generate
+  UUID_GENERATOR = ::UUID.new
 
 end # module PipasPersister
+
+# FRAMEWORK
 require_relative 'pipas_persister/seeder'
+require_relative 'pipas_persister/operation'
+
+# INSTANTIATION
 require_relative 'pipas_persister/viewpoints'
+require_relative 'pipas_persister/operations'
