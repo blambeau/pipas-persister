@@ -1,17 +1,21 @@
-require 'uuid'
-require 'path'
+# STDLIB
+require 'forwardable'
 require 'time'
-require 'pg'
-require 'sequel'
 require 'base64'
 require 'digest/sha1'
+
+# THIRD-PARTY GEMS
+require 'uuid'
+require 'path'
+require 'pg'
+require 'sequel'
 require 'tilt'
 require 'wlang'
 require 'kramdown'
-
-require_relative 'ext/datetime'
-
 require 'alf'
+
+# MONKEY PATCHING
+require_relative 'ext/datetime'
 require_relative 'ext/alf/detail'
 
 module PipasPersister
