@@ -1,0 +1,51 @@
+{
+    "uri": "/service/planning",
+    "synopsis": "Entire planning of the service",
+    "description": "This resource provides information about the planning of the service",
+    "remarks": [
+    ],
+    "schema": {                               // service planning
+      "current_time": "timestamp",            // |- current server time, for time-based comparisons
+      "treatments": [{                        // `- list of ongoing treatments
+        "treatment_id": "uuid",               //    |- unique identifier of the treatment
+        "diagnosis_date": "date",             //    |- date of the cancer diagnosis
+        "patient": {                          //    |- information about the patient
+          "first_name": "string",             //    |  |- patient's first name
+          "last_name":  "string",             //    |  |- patient's last name
+          "gender":     "char"                //    |  `- patient's gender ('M' or 'F')
+        },                                    //    |
+        "treatment_plan": {                   //    |- information about the treatment plan
+          "name": "string",                   //    |  |- name of the treatment plan
+          "duration": "integer",              //    |  |- reference duration (in minutes)
+          "reference_dose": "float"           //    |  `- reference dose (0.0 to 1.0)
+        },                                    //    |
+        "appointments": [{                    //    `- list of appointments
+          "step_id": "uuid",                  //       |- unique identifier of the treatment step
+          "scheduled_at": "timestamp",        //       |- date of the appointment
+          "fixed": "boolean",                 //       |- true if the appointment date is communicated to patient
+          "duration": "integer",              //       |- expected duration of the appointment
+          "doses": {                          //       `- information about dosages
+            "reference": "float",             //          |- reference dose (always present)
+            "prescribed": "float",            //          |- prescribed dose (if any yet)
+            "delivered": "float"              //          `- delivered dose (if any)
+          }
+        }]
+      }]
+    },
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the current planning",
+        "request": {
+          "Accept": "text/plain, application/json",
+          "If-Modified-Since": "Conditional GET from a previous `Last-Modified`",
+          "If-None-Match": "Conditional GET from a previous `ETag`"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`",
+          "ETag": "Unique etag of the scheduling problem resource instance",
+          "Last-Modified": "Last modification to the value of a constraint variable"
+        }
+      }
+    ]
+}

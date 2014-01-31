@@ -5,6 +5,7 @@ module PipasPersister
 
       depends :base, Base
       depends :scheduling, Scheduling
+      depends :service, Service
       depends :random, Random
 
     end # module Top

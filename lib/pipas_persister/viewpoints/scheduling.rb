@@ -61,29 +61,9 @@ module PipasPersister
 
       def treatment_plans
         plans = project(base.treatment_plans, [:tplan_id])
-        plans = image(plans, treatment_plan_steps, :steps)
-        plans = join(plans, treatment_plan_derived_attrs)
+        plans = image(plans, base.treatment_plan_steps, :steps)
+        plans = join(plans, base.treatment_plan_derived_attrs)
         plans
-      end
-
-      def treatment_plan_derived_attrs
-        summarize(treatment_plan_steps, [:tplan_id],
-          duration:        sum(:duration),
-          reference_dose:  sum(:reference_dose)
-        )
-      end
-
-      def treatment_plan_steps
-        union(
-          extend(base.rest_steps,
-            kind: "rest",
-            nurse_load: 0,                  # rest steps do not consume nurse minutes
-            bed_load: 0,                    # rest steps do not consume bed minutes
-            reference_dose: 0.0),           # rest steps do not deliver dosage
-          extend(base.delivery_steps,
-            kind: "delivery",
-            duration: ->(t){ t.bed_load })  # delivery steps take as many minutes as bed load
-        )
       end
 
     end # module Scheduling
