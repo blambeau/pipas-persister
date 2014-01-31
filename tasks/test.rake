@@ -25,11 +25,13 @@ namespace :test do
 
   desc "Run Cucumber tests"
   task(:cucumber) do
+    PipasPersister::Seeder.call('mid-state')
     system('bin/cucumber test/acceptance')
   end
 
   desc "Run Acceptance tests"
   task(:acceptance) do
+    PipasPersister::Seeder.call('mid-state')
     with_thin {
       system('bin/cucumber test/acceptance')
     }

@@ -16,7 +16,7 @@ Feature: Serving the scheduling solution
 
     And the response should have the headers:
       | Content-Type     | Last-Modified                 | ETag                                       | Cache-Control           |
-      | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "cfe9a646f613ead1a66a43a59cc589c92fba25ca" | public, must-revalidate |
+      | application/json | Wed, 01 Jan 2014 12:15:00 GMT | "c9f0e57c4301b7286ff3ed1b6dc112cb0ff56ffb" | public, must-revalidate |
 
     And the body should be a json object having the keys:
       |    problem_key |
