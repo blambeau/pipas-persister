@@ -24,7 +24,7 @@ module PipasPersister
   Time = ::Sequel.datetime_class = ::DateTime
 
   # Version of the software component
-  VERSION = "0.3.0"
+  VERSION = "0.4.0"
 
   # Root folder of this software component
   ROOT_FOLDER = Path.backfind('.[Gemfile]') or raise("Missing Gemfile")

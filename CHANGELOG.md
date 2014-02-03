@@ -1,3 +1,7 @@
+# v0.4.0 -- FIX ME
+
+* Nothing here yet.
+
 # v0.3.0 -- 2014-01-31
 
 * Added `/service/planning` resource.
