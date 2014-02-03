@@ -1,6 +1,6 @@
 # v0.4.0 -- FIX ME
 
-* Nothing here yet.
+* Added dose information in `/scheduling/problem` on an appointment basis.
 
 # v0.3.0 -- 2014-01-31
 

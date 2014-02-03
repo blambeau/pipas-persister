@@ -39,7 +39,7 @@
                 }]                             //  |
             }]                                 //  |
         },                                     //  |
-        "treatments": [{                       //  |- information about all (ongoing) treatments
+        "treatments": [{                       //  `- information about all (ongoing) treatments
             "treatment_id": "uuid",            //     |- unique identifier of the treatment
             "tplan_id": "uuid",                //     |- unique identifier of the corresponding treatment plan
             "diagnosis_date": "date",          //     |- date of the diagnosis
@@ -48,9 +48,14 @@
             "appointments": [{                 //     |- information about delivery appointments (possibly empty!)
                 "step_id": "uuid",             //     |  |- unique identifier of the delivery step
                 "scheduled_at": "timestamp",   //     |  |- time of the delivery appointment,
-                "fixed": "boolean"             //     |  `- true means appointment may not change
+                "fixed": "boolean",            //     |  |- true means appointment may not change
+                "doses": {                     //     |  `- information about dosages
+                  "reference": "float",        //     |    |- reference dose (always present)
+                  "prescribed": "float",       //     |    |- prescribed dose (if any yet)
+                  "delivered": "float"         //     |    `- delivered dose (if any)
+                }                              //     |
             }],                                //     |
-            "unavailabilities": [{             //     |- information about patient unavailabilities
+            "unavailabilities": [{             //     `- information about patient unavailabilities
                 "unavailable_at": "date"       //        `- date (full day) where patient is unavailable
             }]                                 //
         }]

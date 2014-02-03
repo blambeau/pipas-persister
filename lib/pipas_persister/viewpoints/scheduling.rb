@@ -52,9 +52,16 @@ module PipasPersister
       def problem_treatments
         unavailabilities = project(base.patient_unavailabilities, [:treatment_id, :unavailable_at])
         treatments = allbut(base.treatments, [:patient_id])
-        treatments = image(treatments, allbut(base.appointments, [:appointment_id]), :appointments)
+        treatments = image(treatments, allbut(appointments, [:appointment_id]), :appointments)
         treatments = image(treatments, unavailabilities, :unavailabilities)
         treatments
+      end
+
+      def appointments
+        aps = base.appointments
+        aps = image(aps, base.treatment_doses, :doses)
+        extend(aps,
+          doses: ->(t){ t.doses.to_hash(:kind => :dose) })
       end
 
     ### about treatment plans
