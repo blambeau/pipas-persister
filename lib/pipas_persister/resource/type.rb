@@ -4,15 +4,20 @@ module PipasPersister
 
       RelDef = ->(t){ t.is_a?(Array) && (t.size == 1) && t.first.is_a?(Hash) }
 
-      def self.compile(defn)
-        case defn
-        when String then ScalarType[defn]
-        when Hash   then TupleType[defn]
-        when RelDef then RelationType[defn]
-        else
-          raise ArgumentError, "Unexpected `#{defn}` in Type.compile"
+      class << self
+
+        def compile(defn)
+          case defn
+          when String then ScalarType[defn]
+          when Hash   then HashBasedType[defn]
+          when RelDef then RelationType[defn]
+          else
+            raise ArgumentError, "Unexpected `#{defn}` in Type.compile"
+          end
         end
-      end
+        alias :[] :compile
+
+      end # class methods
 
     protected
 

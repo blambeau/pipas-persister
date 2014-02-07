@@ -17,7 +17,7 @@ module PipasPersister
         end
       end
 
-      context 'with a hash' do
+      context 'with a hash with all required fields' do
         let(:arg){
           { "size" => "float" }
         }
@@ -28,8 +28,31 @@ module PipasPersister
 
         it 'should have expected coercers' do
           subject.coercers.keys.should eq([:size])
-          subject.coercers[:size].should be_a(ScalarType)
-          subject.coercers[:size].coercer.should be(Float)
+          subject.coercers[:size].should be_a(Array)
+          subject.coercers[:size].first.should eq(true)
+          subject.coercers[:size].last.coercer.should be(Float)
+        end
+      end
+
+      context 'with a hash with some optional fields' do
+        let(:arg){
+          { "size" => "float", "hobby (?)" => "float" }
+        }
+
+        it do
+          should be_a(MTupleType)
+        end
+
+        it 'should have expected coercers' do
+          subject.coercers.keys.should eq([:size, :hobby])
+
+          subject.coercers[:size].should be_a(Array)
+          subject.coercers[:size].first.should eq(true)
+          subject.coercers[:size].last.coercer.should be(Float)
+
+          subject.coercers[:hobby].should be_a(Array)
+          subject.coercers[:hobby].first.should eq(false)
+          subject.coercers[:hobby].last.coercer.should be(Float)
         end
       end
 
