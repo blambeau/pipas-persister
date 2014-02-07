@@ -51,8 +51,8 @@
                 "fixed": "boolean",            //     |  |- true means appointment may not change
                 "doses": {                     //     |  `- information about dosages
                   "reference": "float",        //     |    |- reference dose (always present)
-                  "prescribed": "float",       //     |    |- prescribed dose (if any yet)
-                  "delivered": "float"         //     |    `- delivered dose (if any)
+                  "prescribed (?)": "float",   //     |    |- prescribed dose (if any yet)
+                  "delivered (?)": "float"     //     |    `- delivered dose (if any)
                 }                              //     |
             }],                                //     |
             "unavailabilities": [{             //     `- information about patient unavailabilities

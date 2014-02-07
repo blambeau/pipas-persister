@@ -26,8 +26,8 @@
           "duration": "integer",              //       |- expected duration of the appointment
           "doses": {                          //       `- information about dosages
             "reference": "float",             //          |- reference dose (always present)
-            "prescribed": "float",            //          |- prescribed dose (if any yet)
-            "delivered": "float"              //          `- delivered dose (if any)
+            "prescribed (?)": "float",        //          |- prescribed dose (if any yet)
+            "delivered (?)": "float"          //          `- delivered dose (if any)
           }
         }]
       }]
