@@ -38,6 +38,19 @@ module PipasPersister
         }
       end
 
+      put '/solution' do
+        tuple = tuple_extract{ scheduling.identity }
+
+        # Set the HTTP ETag
+        etag compute_etag(tuple.problem_key, tuple.last_modified)
+
+        input = request.body.read
+        input = ::JSON.load(input)
+        r = Resource['/scheduling/solution'].decode(input)
+        run_operation Operation::UpdateSchedulingSolution, r
+        200
+      end
+
     end # class Scheduling
   end # module Service
 end # module PipasPersister

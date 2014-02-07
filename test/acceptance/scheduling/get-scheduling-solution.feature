@@ -24,5 +24,3 @@ Feature: Serving the scheduling solution
       |     treatments |
       |  last_modified |
       | last_scheduled |
-
-

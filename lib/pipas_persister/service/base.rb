@@ -37,6 +37,10 @@ module PipasPersister
         etag
       end
 
+      def run_operation(op, input = body.read)
+        op.new(alf_connection).call(input)
+      end
+
     end # class Facade
   end # module Service
 end # module PipasPersister

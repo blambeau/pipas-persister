@@ -14,6 +14,9 @@ module PipasPersister
       # Parsing error? -> Bad Request
       self.on(::JSON::ParserError, 400)
 
+      # Precondition Failed? -> Precondition Failed
+      self.on(Operation::PreconditionFailed, 412)
+
       # ResourceTypeError? -> Unprocessable Entity
       self.on(ResourceTypeError, 422)
 

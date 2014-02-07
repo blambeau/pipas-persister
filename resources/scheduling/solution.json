@@ -35,6 +35,16 @@
           "ETag": "Unique etag of the scheduling problem resource instance",
           "Last-Modified": "Last modification to the value of a constraint variable"
         }
+      },
+      {
+        "method": "PUT",
+        "description": "Update the current scheduling solution",
+        "request": {
+          "Content-Type": "application/json",
+          "If-Match": "Conditional PUT from a previous `ETag`"
+        },
+        "response": {
+        }
       }
     ]
 }

@@ -81,3 +81,12 @@ Then(/^the resource links should all point valid services$/) do
     end
   end
 end
+
+Then(/^the '(.*?)' attribute should be a few seconds ago$/) do |attr|
+  obj = client.json_body
+  obj.should be_a(Hash)
+  value = obj[attr]
+  value.should_not be_nil
+  diff = Time.now - Time.parse(value)
+  diff.should(be <= 1.0)
+end
