@@ -65,7 +65,9 @@ module PipasPersister
 end # module PipasPersister
 
 # FRAMEWORK
+require_relative 'pipas_persister/errors'
 require_relative 'pipas_persister/seeder'
+require_relative 'pipas_persister/resource'
 require_relative 'pipas_persister/operation'
 
 # INSTANTIATION
