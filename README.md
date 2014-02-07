@@ -12,6 +12,7 @@ Please see the complete list with documentation at [/resources/](/resources/).
 
     GET /scheduling/problem   get the current scheduling problem to solve
     GET /scheduling/solution  get the current solution to the scheduling problem
+    PUT /scheduling/solution  update the current scheduling solution
     GET /patients/            get the list of registered patients
 
 ## Project structure

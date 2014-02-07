@@ -1,6 +1,9 @@
-# v0.4.0 -- FIX ME
+# v0.4.0 -- 2014-02-07
 
 * Added dose information in `/scheduling/problem` on an appointment basis.
+* Implemented PUT /scheduling/solution
+* Added support for optional attributes in resource schema, those with a name
+  ending with '(?)'.
 
 # v0.3.0 -- 2014-01-31
 
