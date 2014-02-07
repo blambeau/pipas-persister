@@ -1,8 +1,10 @@
 require 'rack'
+require 'rack/robustness'
 require 'sinatra/base'
 require 'alf-rack'
 
 require_relative 'service/base'
+require_relative 'service/shield'
 require_relative 'service/scheduling'
 require_relative 'service/patients'
 require_relative 'service/service_info'
@@ -20,6 +22,9 @@ module PipasPersister
 
       # Set the content-length on every request
       use Rack::ContentLength
+
+      # Convert exceptions to proper HTTP error codes
+      use Shield
 
       # Connect to the database
       use Alf::Rack::Connect do |cfg|
