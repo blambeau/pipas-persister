@@ -9,6 +9,7 @@ require_relative 'service/service_info'
 require_relative 'service/facade'
 require_relative 'service/protocol'
 require_relative 'service/resources'
+require_relative 'service/testing'
 
 module PipasPersister
   module Service
@@ -44,6 +45,10 @@ module PipasPersister
       map '/service' do
         run Service::ServiceInfo
       end
+
+      map '/testing' do
+        run Service::Testing
+      end if PipasPersister::ENVIRONMENT =~ /devel|test/
 
       # Run '/' and that kind of 'static' services
       run Service::Facade

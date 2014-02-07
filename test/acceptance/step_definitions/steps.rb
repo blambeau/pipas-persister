@@ -1,6 +1,9 @@
 ### background
 
 Given(/^the situation is the one described in the '(.*?)' dataset$/) do |dataset|
+  client.put("/testing/database?dataset=#{dataset}")
+  client.go
+  client.last_response.status.should eq(200)
 end
 
 ### requests
