@@ -7,9 +7,7 @@
       "The `last_scheduled` entry provides the time at which the last known solution was scheduled. The `last_modified` entry provides the time of the last update to a scheduling variable. Provided the Scheduler meets its specification, the last solution is known to be complete and correct if `last_modified <= last_scheduled`. As explained above, it can be incomplete or incorrect otherwise"
     ],
     "schema": {                                //  scheduling problem
-        "problem_key":    "uuid",              //  |- unique identifier of the problem solved
-        "last_scheduled": "timestamp",         //  |- when the solution has been computed,
-        "last_modified":  "timestamp",         //  |- time of the last change to a variable
+        "problem_key": "uuid",                 //  |- unique identifier of the problem solved
         "service": {                           //  |- information about the service
             "bed_load": "float",               //  |- average bed load
             "nurse_load": "float"              //  |- average nurse load
