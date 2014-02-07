@@ -10,9 +10,8 @@ Given(/^I receive a GET request to '(.*?)'$/) do |url|
 end
 
 Given(/^I receive a GET request to '(.*?)' with the headers:$/) do |url, table|
-  client.with_headers(table.hashes.first) do
-    client.get(url)
-  end
+  client.headers(table.hashes.first)
+  client.get(url)
 end
 
 ### reponse status and headers
