@@ -18,10 +18,4 @@ Feature: List of registered patients
       | Content-Type     |
       | application/json |
 
-    And the body should be a json array
-
-    And all objects in this array should have the keys:
-      |   patient_id |
-      |   first_name |
-      |    last_name |
-      |       gender |
+    And the body should be a valid '/patients/' resource representation

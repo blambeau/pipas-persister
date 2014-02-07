@@ -62,6 +62,23 @@ Then(/^all objects in this array should have the keys:$/) do |table|
   end
 end
 
+Then(/^the body should be a valid '(.*?)' resource representation$/) do |res|
+  ->{
+    PipasPersister::Resource[res].decode(client.json_body)
+  }.should_not raise_error
+end
+
+Then(/^the '(.*?)' attribute should be a few seconds ago$/) do |attr|
+  obj = client.json_body
+  obj.should be_a(Hash)
+  value = obj[attr]
+  value.should_not be_nil
+  diff = Time.now - Time.parse(value)
+  diff.should(be <= 1.0)
+end
+
+### resources
+
 Then(/^the resource URI should be a valid service$/) do
   obj = client.json_body
   obj.each do |res|
@@ -80,13 +97,4 @@ Then(/^the resource links should all point valid services$/) do
       c.last_response.status.should eq(200)
     end
   end
-end
-
-Then(/^the '(.*?)' attribute should be a few seconds ago$/) do |attr|
-  obj = client.json_body
-  obj.should be_a(Hash)
-  value = obj[attr]
-  value.should_not be_nil
-  diff = Time.now - Time.parse(value)
-  diff.should(be <= 1.0)
 end

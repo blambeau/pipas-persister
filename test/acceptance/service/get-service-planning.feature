@@ -18,9 +18,4 @@ Feature: Serving the service planning
       | Content-Type     | Last-Modified                 | Cache-Control           |
       | application/json | Wed, 01 Jan 2014 12:15:00 GMT | public, must-revalidate |
 
-    And the body should be a json object having the keys:
-      |   current_time |
-      |  last_modified |
-      | last_scheduled |
-      |     treatments |
-
+    And the body should be a valid '/service/planning' resource representation
