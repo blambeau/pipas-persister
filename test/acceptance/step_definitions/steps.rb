@@ -5,13 +5,17 @@ end
 
 ### requests
 
-Given(/^I receive a GET request to '(.*?)'$/) do |url|
-  client.get(url)
+Given(/^I receive a (GET|PUT) request to '(.*?)'$/) do |verb,url|
+  client.request(verb, url)
 end
 
-Given(/^I receive a GET request to '(.*?)' with the headers:$/) do |url, table|
-  client.headers(table.hashes.first)
-  client.get(url)
+Given(/^I receive a (GET|PUT) request to '(.*?)' with the headers:$/) do |verb, url, table|
+  client.request_headers(table.hashes.first)
+  client.request(verb, url)
+end
+
+Given(/^the request has the body:$/) do |string|
+  client.request_body(string)
 end
 
 ### reponse status and headers
