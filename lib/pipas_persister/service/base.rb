@@ -1,6 +1,7 @@
 module PipasPersister
   module Service
     class Base < Sinatra::Base
+      include Alf::Rack::Helpers
 
       configure do
         # Set the environment we run in

@@ -1,7 +1,6 @@
 module PipasPersister
   module Service
     class Resources < Base
-      include Alf::Rack::Helpers
 
       get '/', provides: 'text/html' do
         wlang :'resources/list', locals: {

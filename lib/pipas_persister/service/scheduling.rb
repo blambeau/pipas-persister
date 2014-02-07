@@ -1,7 +1,6 @@
 module PipasPersister
   module Service
     class Scheduling < Base
-      include Alf::Rack::Helpers
 
       get '/problem' do
         tuple = tuple_extract{ scheduling.identity }

@@ -1,7 +1,6 @@
 module PipasPersister
   module Service
     class Patients < Base
-      include Alf::Rack::Helpers
 
       get '/' do
         respond_with relvar{

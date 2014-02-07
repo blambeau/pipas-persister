@@ -1,7 +1,6 @@
 module PipasPersister
   module Service
     class ServiceInfo < Base
-      include Alf::Rack::Helpers
 
       get '/planning' do
         tuple = tuple_extract{ scheduling.identity }
