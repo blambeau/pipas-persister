@@ -13,6 +13,7 @@ require 'tilt'
 require 'wlang'
 require 'kramdown'
 require 'alf'
+require 'json'
 
 # MONKEY PATCHING
 require_relative 'ext/datetime'
