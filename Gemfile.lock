@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/alf-tool/alf-core
-  revision: 3ff244ea16810e84ddbe6186642cd5bb6b956855
+  revision: 166b7e537182593ed9f3637f32eb93536f389793
   specs:
     alf-core (0.16.0)
       domain (~> 1.0)
@@ -166,6 +166,7 @@ DEPENDENCIES
   kramdown (~> 0.13.4)
   pg (= 0.16.0)
   rack (~> 1.5)
+  rack-robustness (~> 1.0)
   rake (~> 10.0)
   rspec (~> 2.14)
   sequel (~> 4.4)

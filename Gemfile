@@ -10,6 +10,7 @@ group :runtime do
   gem "sinatra",  "~> 1.4"
   gem "wlang",    "~> 2.1"
   gem "kramdown", "~> 0.13.4"
+  gem "rack-robustness", "~> 1.0"
 
   gem "alf-core",   git: "git://github.com/alf-tool/alf-core"
   gem "alf-sql",    git: "git://github.com/alf-tool/alf-sql.git"
