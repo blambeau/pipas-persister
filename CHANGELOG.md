@@ -1,3 +1,8 @@
+# v0.4.1 -- 2014-02-17
+
+* Added `reference_dose` to treatment plan steps in /scheduling/problem
+* Added `tplan_id` and `patient_id` to /service/planning
+
 # v0.4.0 -- 2014-02-07
 
 * Added dose information in `/scheduling/problem` on an appointment basis.
