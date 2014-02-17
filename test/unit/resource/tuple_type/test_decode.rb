@@ -35,6 +35,16 @@ module PipasPersister
         end
       end
 
+      context 'with extra attribute' do
+        let(:arg){ {"size" => 1.0, "foo" => "bar"} }
+
+        it 'should raise an error' do
+          ->{
+            subject
+          }.should raise_error(ResourceTypeError, /Unrecognized attribute `foo`/)
+        end
+      end
+
       context 'with deeper error' do
         let(:arg){ { "size" => "foo" } }
 

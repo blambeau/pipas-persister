@@ -25,7 +25,17 @@ module PipasPersister
     protected
 
       def decode_hash(arg, location = nil)
-        type_error("Invalid tuple '#{arg}'", location) unless arg.is_a?(Hash)
+        # check it's a Hash
+        unless arg.is_a?(Hash)
+          type_error("Invalid tuple '#{arg}'", location)
+        end
+
+        # check no extra attribute
+        extra = arg.keys.map(&:to_s) - coercers.keys.map(&:to_s)
+        unless extra.empty?
+          type_error("Unrecognized attribute `#{extra.first}`", location)
+        end
+
         tuple = {}
         coercers.each_pair do |name,(required, coercer)|
           fetch_hash_value(arg, name, required){|val, found|
