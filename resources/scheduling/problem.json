@@ -35,7 +35,8 @@
                     "position": "integer",     //  |     |- position of the step in the steps
                     "duration": "integer",     //  |     |- duration of the step in minutes
                     "nurse_load": "integer",   //  |     |- load in terms of "minutes of nurse work"
-                    "bed_load": "integer"      //  |     `- load in terms of "minutes of bed required"
+                    "bed_load": "integer",     //  |     |- load in terms of "minutes of bed required"
+                    "reference_dose": "float"  //  |     `- reference dose for the step (0.0 if a rest step)
                 }]                             //  |
             }]                                 //  |
         },                                     //  |
