@@ -10,11 +10,13 @@
         "treatment_id": "uuid",               //    |- unique identifier of the treatment
         "diagnosis_date": "date",             //    |- date of the cancer diagnosis
         "patient": {                          //    |- information about the patient
+          "patient_id": "string",             //    |  |- patient's unique id
           "first_name": "string",             //    |  |- patient's first name
           "last_name":  "string",             //    |  |- patient's last name
           "gender":     "char"                //    |  `- patient's gender ('M' or 'F')
         },                                    //    |
         "treatment_plan": {                   //    |- information about the treatment plan
+          "tplan_id": "string",               //    |  |- unique identifier of the treatment plan
           "name": "string",                   //    |  |- name of the treatment plan
           "duration": "integer",              //    |  |- reference duration (in minutes)
           "reference_dose": "float"           //    |  `- reference dose (0.0 to 1.0)

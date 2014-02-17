@@ -6,8 +6,7 @@ module PipasPersister
       depends :base, Base
 
       def planning
-        extend(
-          allbut(base.scheduling, [:problem_key]),
+        extend(DEE,
           current_time: Time.now,
           treatments: ->(t){ treatments })
       end
