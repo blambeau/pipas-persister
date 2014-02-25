@@ -55,9 +55,9 @@ module PipasPersister
         run Service::ServiceInfo
       end
 
-      #map '/testing' do
+      map '/testing' do
         run Service::Testing
-      #end if PipasPersister::ENVIRONMENT =~ /devel|test/
+      end # if PipasPersister::ENVIRONMENT =~ /devel|test/
 
       # Run '/' and that kind of 'static' services
       run Service::Facade
