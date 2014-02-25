@@ -12,6 +12,7 @@ require_relative 'service/facade'
 require_relative 'service/protocol'
 require_relative 'service/resources'
 require_relative 'service/testing'
+require_relative 'service/cors'
 
 module PipasPersister
   module Service
@@ -25,6 +26,9 @@ module PipasPersister
 
       # Convert exceptions to proper HTTP error codes
       use Shield
+
+      # Allow cross-origin requests
+      use Cors
 
       # Connect to the database
       use Alf::Rack::Connect do |cfg|
