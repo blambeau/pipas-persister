@@ -1,6 +1,6 @@
 {
     "uri": "/treatments/{{uuid}}",
-    "synopsis": "Information about a specific treatment",
+    "synopsis": "Information about a specific treatment (GET only)",
     "description": "This resource provides information about a treatment",
     "remarks": [
     ],

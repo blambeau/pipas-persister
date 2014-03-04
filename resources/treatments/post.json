@@ -1,0 +1,32 @@
+{
+    "uri": "/treatments/{{uuid}}",
+    "synopsis": "Information about a specific treatment (POST only)",
+    "description": "This resource captures required information for creating a treatment",
+    "remarks": [
+      "For simplicity, the service automatically creates the patient entity."
+    ],
+    "schema": {                             // treatment information
+      "treatment_id": "uuid",               //    |- unique identifier of the treatment
+      "diagnosis_date": "date",             //    |- date of the cancer diagnosis
+      "earliest_start_date": "date",        //    |- earliest date for starting the treatment
+      "latest_start_date": "date",          //    |- deadline for starting the treatment
+      "patient": {                          //    |- information about the patient
+        "first_name": "string",             //    |  |- patient's first name
+        "last_name":  "string",             //    |  |- patient's last name
+        "gender":     "char"                //    |  `- patient's gender ('M' or 'F')
+      },                                    //    |
+      "tplan_id": "string"                  //    |- unique identifier of the treatment plan
+    },
+    "services": [
+      {
+        "method": "POST",
+        "description": "Create a new patient and enrol her to a new treatment",
+        "request": {
+          "Content-Type": "application/json"
+        },
+        "response": {
+          "Location": "URI of the resulting treatment resource"
+        }
+      }
+    ]
+}

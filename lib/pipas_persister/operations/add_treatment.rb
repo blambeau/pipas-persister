@@ -2,28 +2,30 @@ module PipasPersister
   class Operation
     class AddTreatment < Operation
 
-      INPUT_TYPE = {
-        patient_id:          String,
-        tplan_id:            String,
-        diagnosis_date:      Date,
-        earliest_start_date: Date,
-        latest_start_date:   Date
-      }
-
       def execute(input)
-        inserted_tuple(input).tap do |t|
-          relvar{
-            base.treatments
-          }.insert(t)
-        end
+        # insert the patient
+        patient = patient_tuple(input)
+        relvar{
+          base.patients
+        }.insert patient
+
+        # insert the treatment
+        relvar{
+          base.treatments
+        }.insert treatment_tuple(input, patient)
+
+        # now touch the scheduling problem
+        touch_scheduling_problem
       end
 
     private
 
-      def inserted_tuple(input)
-        input.extend(
-          treatment_id: new_uuid
-        )
+      def patient_tuple(input)
+        input.patient.extend(patient_id: UUID_GENERATOR.generate)
+      end
+
+      def treatment_tuple(input, patient)
+        input.allbut(:patient).extend(patient_id: patient.patient_id)
       end
 
     end # class AddTreatment
