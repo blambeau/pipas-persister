@@ -1,3 +1,9 @@
+# v0.5.0 -- 2014-03-04
+
+* Added GET/POST/PUT for treatments, deliveries and appointments.
+* Added GET /service/availabilities.
+* Added `earliest_start_date` and `latest_change_date` in treatments from `/service/planning`
+
 # v0.4.1 -- 2014-02-17
 
 * Added `reference_dose` to treatment plan steps in /scheduling/problem
