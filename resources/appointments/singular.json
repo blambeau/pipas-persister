@@ -17,14 +17,19 @@
         "method": "GET",
         "description": "Get the appointment information",
         "request": {
-          "Accept": "text/plain, application/json",
-          "If-Modified-Since": "Conditional GET from a previous `Last-Modified`",
-          "If-None-Match": "Conditional GET from a previous `ETag`"
+          "Accept": "text/plain, application/json"
         },
         "response": {
-          "Content-Type": "Granting `Accept` header, defaults to `application/json`",
-          "ETag": "Unique etag of the scheduling problem resource instance",
-          "Last-Modified": "Last modification to the value of a constraint variable"
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`"
+        }
+      },
+      {
+        "method": "PUT",
+        "description": "Update appointment information",
+        "request": {
+          "Content-Type": "application/json"
+        },
+        "response": {
         }
       }
     ]
