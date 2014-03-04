@@ -2,6 +2,7 @@
 
 * Added GET/POST/PUT for treatments, deliveries and appointments.
 * Added GET /service/availabilities.
+* Added GET /treatment-plans/
 * Added `earliest_start_date` and `latest_change_date` in treatments from `/service/planning`
 
 # v0.4.1 -- 2014-02-17

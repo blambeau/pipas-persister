@@ -22,6 +22,7 @@ Please see the complete list with documentation at [/resources/](/resources/).
     GET  /service/availabilities  get information about service availabilities
     GET  /treatments/{uuid}       get information about a specific treatment
     POST /treatments/             create a patient and enrol her in a new treatment
+    GET  /treatment-plans/        get the list of available treament plans
 
 ## Project structure
 

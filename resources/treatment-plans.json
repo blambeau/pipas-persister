@@ -1,0 +1,29 @@
+{
+    "uri": {
+      "pattern": "/treatment-plans/",
+      "documentation": "/treatment-plans/",
+      "example": "/treatment-plans/"
+    },
+    "synopsis": "Known treatment plans",
+    "description": "This collection resource captures the list of available treatment plans",
+    "remarks": [
+    ],
+    "schema": [{                          //  list of treatment plans
+        "tplan_id": "uuid",               //  |- unique identifier of the plan
+        "name":  "string",                //  |- treatment plan name
+        "duration": "integer",            //  |- total treatment duration (in minutes)
+        "reference_dose": "float"         //  `- reference dose (0.0 to 1.0)
+    }],
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the list of treatment plans",
+        "request": {
+          "Accept": "text/plain, application/json"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`"
+        }
+      }
+    ]
+}
