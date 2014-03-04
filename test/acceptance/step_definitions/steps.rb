@@ -77,6 +77,13 @@ Then(/^the '(.*?)' attribute should be a few seconds ago$/) do |attr|
   diff.should(be <= 1.0)
 end
 
+Then(/^the '(.*?)' attribute should be true$/) do |attr|
+  obj = client.json_body
+  obj.should be_a(Hash)
+  value = obj[attr]
+  value.should eq(true)
+end
+
 ### resources
 
 Then(/^the resource URI should be a valid service$/) do

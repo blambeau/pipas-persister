@@ -1,0 +1,29 @@
+{
+    "uri": "/appointments/{uuid}",
+    "synopsis": "Information about a single appointment",
+    "description": "This resource provides information about a single appointment",
+    "remarks": [
+    ],
+    "schema": {                               // appointment information
+      "appointment_id": "uuid",               // |- unique identifier of the appointment
+      "scheduled_at (?)": "timestamp",        // |- date-time of the appointment
+      "fixed (?)": "boolean",                 // |- true if the appointment date is communicated to patient
+      "duration (?)": "integer"               // |- expected duration of the appointment
+    },
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the appointment information",
+        "request": {
+          "Accept": "text/plain, application/json",
+          "If-Modified-Since": "Conditional GET from a previous `Last-Modified`",
+          "If-None-Match": "Conditional GET from a previous `ETag`"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`",
+          "ETag": "Unique etag of the scheduling problem resource instance",
+          "Last-Modified": "Last modification to the value of a constraint variable"
+        }
+      }
+    ]
+}

@@ -7,6 +7,7 @@ require_relative 'service/base'
 require_relative 'service/shield'
 require_relative 'service/scheduling'
 require_relative 'service/patients'
+require_relative 'service/appointments'
 require_relative 'service/service_info'
 require_relative 'service/facade'
 require_relative 'service/protocol'
@@ -49,6 +50,10 @@ module PipasPersister
 
       map '/patients' do
         run Service::Patients
+      end
+
+      map '/appointments' do
+        run Service::Appointments
       end
 
       map '/service' do

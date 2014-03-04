@@ -1,1 +1,2 @@
 require_relative 'operations/update_scheduling_solution'
+require_relative 'operations/update_appointment'
