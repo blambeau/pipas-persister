@@ -1,5 +1,9 @@
 {
-    "uri": "/appointments/{uuid}",
+    "uri": {
+      "pattern": "/appointments/{uuid}",
+      "documentation": "/appointments/singular",
+      "example": "/appointments/e5f18eb0-671d-0131-38d1-3c07545ed162"
+    },
     "synopsis": "Information about a single appointment",
     "description": "This resource provides information about a single appointment",
     "remarks": [
@@ -9,7 +13,7 @@
       "treatment_id (?)": "uuid",             // |- unique identifier of the treatment
       "step_id (?)": "uuid",                  // |- unique identifier of the treatment step
       "scheduled_at (?)": "timestamp",        // |- date-time of the appointment
-      "fixed (?)": "boolean",                 // |- true if the appointment date is communicated to patient
+      "fixed (?)": "boolean",                 // |- true if the appointment date is communicated to patients
       "duration (?)": "integer"               // |- expected duration of the appointment
     },
     "services": [

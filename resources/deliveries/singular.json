@@ -1,5 +1,9 @@
 {
-    "uri": "/deliveries/{uuid}",
+    "uri": {
+      "pattern": "/deliveries/{uuid}",
+      "documentation": "/deliveries/singular",
+      "example": "/deliveries/08bfd040-6cb9-0131-3a25-3c07545ed162"
+    },
     "synopsis": "Information about a single delivery",
     "description": "This resource provides information about a single delivery",
     "remarks": [

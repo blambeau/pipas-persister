@@ -100,11 +100,10 @@ end
 
 ### resources
 
-Then(/^the resource URI should be a valid service$/) do
+Then(/^the resource URI should have a valid example$/) do
   obj = client.json_body
   obj.each do |res|
-    uri = res["uri"]
-    next if uri =~ /{/
+    uri = res["uri"]["example"]
     c = client.dup
     c.get(uri)
     c.last_response.status.should eq(200)
@@ -115,8 +114,7 @@ Then(/^the resource links should all point valid services$/) do
   obj = client.json_body
   obj.each do |res|
     res["links"].each do |link|
-      uri = res["uri"]
-      next if uri =~ /{/
+      uri = res["uri"]["example"]
       c = client.dup
       c.get(uri)
       c.last_response.status.should eq(200)

@@ -14,6 +14,9 @@ module PipasPersister
       # Parsing error? -> Bad Request
       self.on(::JSON::ParserError, 400)
 
+      # Tuple extraction fails? -> Not Found
+      self.on(::Alf::NoSuchTupleError, 404)
+
       # Precondition Failed? -> Precondition Failed
       self.on(Operation::PreconditionFailed, 412)
 

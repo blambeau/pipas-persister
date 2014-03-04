@@ -1,5 +1,9 @@
 {
-    "uri": "/scheduling/problem",
+    "uri": {
+      "pattern": "/scheduling/problem",
+      "documentation": "/scheduling/problem",
+      "example": "/scheduling/problem"
+    },
     "synopsis": "Scheduling problem",
     "description": "The scheduling problem resource provides the value of every variable participating to the scheduling constraint model.",
     "remarks": [

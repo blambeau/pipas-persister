@@ -1,5 +1,9 @@
 {
-    "uri": "/treatments/{{uuid}}",
+    "uri": {
+      "pattern": "/treatments/{uuid}",
+      "documentation": "/treatments/post",
+      "example": "/treatments/d9026fa0-66ff-0131-38cb-3c07545ed162"
+    },
     "synopsis": "Information about a specific treatment (POST only)",
     "description": "This resource captures required information for creating a treatment",
     "remarks": [

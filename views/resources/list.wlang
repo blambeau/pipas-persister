@@ -10,9 +10,9 @@
   </tr>
   *{resources}{
     <tr>
-      <td><a href="${uri}">${uri}</a></td>
+      <td><a href="${uri.example}">${uri.pattern}</a></td>
       <td>${synopsis}</td>
-      <td><a href="/resources${uri}">documentation</a></td>
+      <td><a href="/resources${uri.documentation}">documentation</a></td>
     </tr>
   }
 </table>

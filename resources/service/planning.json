@@ -1,5 +1,9 @@
 {
-    "uri": "/service/planning",
+    "uri": {
+      "pattern": "/service/planning",
+      "documentation": "/service/planning",
+      "example": "/service/planning"
+    },
     "synopsis": "Entire planning of the service",
     "description": "This resource provides information about the planning of the service",
     "remarks": [

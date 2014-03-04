@@ -1,5 +1,9 @@
 {
-    "uri": "/scheduling/solution",
+    "uri": {
+      "pattern": "/scheduling/solution",
+      "documentation": "/scheduling/solution",
+      "example": "/scheduling/solution"
+    },
     "synopsis": "Scheduling solution",
     "description": "The scheduling solution resource captures the Scheduler solution to a scheduling problem",
     "remarks": [

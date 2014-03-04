@@ -1,5 +1,9 @@
 {
-    "uri": "/patients/",
+    "uri": {
+      "pattern": "/patients/",
+      "documentation": "/patients/",
+      "example": "/patients/"
+    },
     "synopsis": "Registered patients",
     "description": "This collection resource captures the list of registered patients",
     "remarks": [

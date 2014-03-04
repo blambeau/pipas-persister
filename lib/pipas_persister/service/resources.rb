@@ -44,9 +44,12 @@ module PipasPersister
             'uri'      => res["uri"],
             'synopsis' => res["synopsis"],
             'links'    => [
+              { 'kind'   => 'example',
+                'method' => 'GET',
+                'uri'    => "/resources#{res['uri']['example']}" },
               { 'kind'   => 'doc',
                 'method' => 'GET',
-                'uri'    => "/resources#{res['uri']}" }
+                'uri'    => "/resources#{res['uri']['documentation']}" }
             ]
           }
         }
