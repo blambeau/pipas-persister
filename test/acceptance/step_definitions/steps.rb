@@ -84,6 +84,13 @@ Then(/^the '(.*?)' attribute should be true$/) do |attr|
   value.should eq(true)
 end
 
+Then(/^the 'scheduled_at' attribute should equal "(.*?)"$/) do |date|
+  obj = client.json_body
+  obj.should be_a(Hash)
+  value = obj["scheduled_at"]
+  DateTime.parse(value).should eq(DateTime.parse(date))
+end
+
 ### resources
 
 Then(/^the resource URI should be a valid service$/) do
