@@ -1,0 +1,36 @@
+{
+    "uri": "/deliveries/{uuid}",
+    "synopsis": "Information about a single delivery",
+    "description": "This resource provides information about a single delivery",
+    "remarks": [
+    ],
+    "schema": {                               // appointment information
+      "delivery_id": "uuid",                  // |- unique identifier of the delivery
+      "treatment_id": "uuid",                 // |- unique identifier of the treatment
+      "step_id": "uuid",                      // |- unique identifier of the treatment step
+      "delivered_at": "timestamp",            // |- date-time of the appointment
+      "delivered_dose": "float"               // |- dose actually delivered
+    },
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the delivery information",
+        "request": {
+          "Accept": "text/plain, application/json"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`"
+        }
+      },
+      {
+        "method": "POST",
+        "description": "Add information about a particular delivery",
+        "request": {
+          "Content-Type": "application/json"
+        },
+        "response": {
+          "Location": "URI of the resulting delivery resource"
+        }
+      }
+    ]
+}

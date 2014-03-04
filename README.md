@@ -10,12 +10,14 @@ The application can be reached at http://pipas-persister.herokuapp.com/
 
 Please see the complete list with documentation at [/resources/](/resources/).
 
-    GET /scheduling/problem   get the current scheduling problem to solve
-    GET /scheduling/solution  get the current solution to the scheduling problem
-    PUT /scheduling/solution  update the current scheduling solution
-    GET /patients/            get the list of registered patients
-    GET /appointments/{uuid}  get information about a specific appointment
-    PUT /appointments/{uuid}  update information about an appointment
+    GET  /scheduling/problem   get the current scheduling problem to solve
+    GET  /scheduling/solution  get the current solution to the scheduling problem
+    PUT  /scheduling/solution  update the current scheduling solution
+    GET  /patients/            get the list of registered patients
+    GET  /appointments/{uuid}  get information about a specific appointment
+    PUT  /appointments/{uuid}  update information about an appointment
+    GET  /deliveries/{uuid}    get information about a specific delivery
+    POST /deliveries/          add information about a new delivery
 
 ## Project structure
 

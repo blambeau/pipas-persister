@@ -49,5 +49,15 @@ module PipasPersister
       end
     end
 
+    def touch_scheduling_problem
+      relvar{
+        base.scheduling
+      }.update(last_modified: Time.now, problem_key: new_problem_key)
+    end
+
+    def new_problem_key
+      UUID_GENERATOR.generate
+    end
+
   end # class Operation
 end # module PipasPersister

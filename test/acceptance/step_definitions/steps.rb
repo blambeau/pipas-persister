@@ -8,11 +8,18 @@ end
 
 ### requests
 
-Given(/^I receive a (GET|PUT) request to '(.*?)'$/) do |verb,url|
+Given(/^I receive a GET request to the specified location with the headers:$/) do |table|
+  client.request_headers(table.hashes.first)
+  loc = client.last_response['Location']
+  loc.should_not be_nil
+  client.get(loc)
+end
+
+Given(/^I receive a (GET|PUT|POST) request to '(.*?)'$/) do |verb,url|
   client.request(verb, url)
 end
 
-Given(/^I receive a (GET|PUT) request to '(.*?)' with the headers:$/) do |verb, url, table|
+Given(/^I receive a (GET|PUT|POST) request to '(.*?)' with the headers:$/) do |verb, url, table|
   client.request_headers(table.hashes.first)
   client.request(verb, url)
 end
@@ -84,10 +91,10 @@ Then(/^the '(.*?)' attribute should be true$/) do |attr|
   value.should eq(true)
 end
 
-Then(/^the 'scheduled_at' attribute should equal "(.*?)"$/) do |date|
+Then(/^the '(scheduled_at|delivered_at)' attribute should equal "(.*?)"$/) do |attr,date|
   obj = client.json_body
   obj.should be_a(Hash)
-  value = obj["scheduled_at"]
+  value = obj[attr]
   DateTime.parse(value).should eq(DateTime.parse(date))
 end
 
@@ -96,8 +103,10 @@ end
 Then(/^the resource URI should be a valid service$/) do
   obj = client.json_body
   obj.each do |res|
+    uri = res["uri"]
+    next if uri =~ /{/
     c = client.dup
-    c.get(res["uri"])
+    c.get(uri)
     c.last_response.status.should eq(200)
   end
 end
@@ -106,8 +115,10 @@ Then(/^the resource links should all point valid services$/) do
   obj = client.json_body
   obj.each do |res|
     res["links"].each do |link|
+      uri = res["uri"]
+      next if uri =~ /{/
       c = client.dup
-      c.get(link["uri"])
+      c.get(uri)
       c.last_response.status.should eq(200)
     end
   end

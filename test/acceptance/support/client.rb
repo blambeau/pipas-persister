@@ -34,6 +34,10 @@ class Client
     request(:put, url)
   end
 
+  def post(url)
+    request(:post, url)
+  end
+
 ### go
 
   def go
