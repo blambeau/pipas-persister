@@ -1,0 +1,25 @@
+{
+    "uri": "/service/availabilities",
+    "synopsis": "Information about various nurse/bed/service availabilities",
+    "description": "This resource provides information about the service, such as nurse and bed availabilities and working hours",
+    "remarks": [
+    ],
+    "schema": [{                              // service availabilities
+      "week_day": "string",                   // |- week date ('monday' to 'sunday')
+      "open":  "boolean",                     // |- is the service open?
+      "nurses": "integer",                    // |- number of nurses available that day
+      "beds": "integer"                       // `- number of beds available that day
+    }],
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the availabilities information",
+        "request": {
+          "Accept": "text/plain, application/json"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`"
+        }
+      }
+    ]
+}

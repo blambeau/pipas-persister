@@ -20,6 +20,16 @@ module PipasPersister
         }
       end
 
+      get '/availabilities' do
+        respond_with relvar{
+          beds    = rename(base.bed_availabilities, quantity: :beds)
+          nurses  = rename(base.nurse_availabilities, quantity: :nurses)
+          minutes = rename(base.minutes_per_day, quantity: :minutes)
+          avail   = join(join(beds, nurses), minutes)
+          allbut(extend(avail, open: ->(t){ t.minutes > 0 }), :minutes)
+        }
+      end
+
     private
 
       def max(t1, t2)
