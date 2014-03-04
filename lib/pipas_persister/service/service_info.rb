@@ -22,11 +22,7 @@ module PipasPersister
 
       get '/availabilities' do
         respond_with relvar{
-          beds    = rename(base.bed_availabilities, quantity: :beds)
-          nurses  = rename(base.nurse_availabilities, quantity: :nurses)
-          minutes = rename(base.minutes_per_day, quantity: :minutes)
-          avail   = join(join(beds, nurses), minutes)
-          allbut(extend(avail, open: ->(t){ t.minutes > 0 }), :minutes)
+          service.availabilities
         }
       end
 

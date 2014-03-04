@@ -9,6 +9,8 @@
       "treatments": [{                        // `- list of ongoing treatments
         "treatment_id": "uuid",               //    |- unique identifier of the treatment
         "diagnosis_date": "date",             //    |- date of the cancer diagnosis
+        "earliest_start_date": "date",        //    |- earliest date for starting the treatment
+        "latest_start_date": "date",          //    |- deadline for starting the treatment
         "patient": {                          //    |- information about the patient
           "patient_id": "string",             //    |  |- patient's unique id
           "first_name": "string",             //    |  |- patient's first name

@@ -11,10 +11,18 @@ module PipasPersister
           treatments: ->(t){ treatments })
       end
 
+      def availabilities
+        beds    = rename(base.bed_availabilities, quantity: :beds)
+        nurses  = rename(base.nurse_availabilities, quantity: :nurses)
+        minutes = rename(base.minutes_per_day, quantity: :minutes)
+        avail   = join(join(beds, nurses), minutes)
+        allbut(extend(avail, open: ->(t){ t.minutes > 0 }), :minutes)
+      end
+
     #private
 
       def treatments
-        ts = allbut(base.treatments, [:earliest_start_date, :latest_start_date])
+        ts = base.treatments
         ts = detail(ts, patients, :patient)
         ts = detail(ts, treatment_plans, :treatment_plan)
         ts = image(ts, appointments, :appointments)
