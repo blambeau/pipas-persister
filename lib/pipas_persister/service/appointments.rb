@@ -7,7 +7,7 @@ module PipasPersister
           from_plan = project(base.delivery_steps, [:step_id, :bed_load])
           from_plan = rename(from_plan, :bed_load => :duration)
           appoints  = restrict(base.appointments, appointment_id: uuid)
-          allbut(join(appoints, from_plan), [:treatment_id, :step_id])
+          join(appoints, from_plan)
         }
       end
 

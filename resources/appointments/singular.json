@@ -6,6 +6,8 @@
     ],
     "schema": {                               // appointment information
       "appointment_id": "uuid",               // |- unique identifier of the appointment
+      "treatment_id (?)": "uuid",             // |- unique identifier of the treatment
+      "step_id (?)": "uuid",                  // |- unique identifier of the treatment step
       "scheduled_at (?)": "timestamp",        // |- date-time of the appointment
       "fixed (?)": "boolean",                 // |- true if the appointment date is communicated to patient
       "duration (?)": "integer"               // |- expected duration of the appointment
