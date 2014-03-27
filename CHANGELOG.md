@@ -1,3 +1,7 @@
+# v0.5.1 -- 2014-03-27
+
+* Added `appointment_id` to /service/planning and /treatment/singular
+
 # v0.5.0 -- 2014-03-04
 
 * Added GET/POST/PUT for treatments, deliveries and appointments.
