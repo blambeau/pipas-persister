@@ -40,7 +40,8 @@ Feature: Updating an appointment
     And the request has the body:
       """
       {
-        "scheduled_at": "2014-03-04T12:34"
+        "scheduled_at": "2014-03-04T12:34",
+        "duration": 128
       }
       """
 

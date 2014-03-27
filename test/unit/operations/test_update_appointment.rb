@@ -23,7 +23,7 @@ module PipasPersister
         }
 
         let(:input){
-          Tuple(appointment_id: uuid, fixed: true)
+          Tuple(appointment_id: uuid, fixed: true, duration: 123)
         }
 
         before do

@@ -15,7 +15,7 @@ module PipasPersister
     private
 
       def appointment_tuple(input)
-        input
+        Tuple(input).allbut([:duration])
       end
 
     end # class UpdateAppointment
