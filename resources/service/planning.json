@@ -28,6 +28,7 @@
           "reference_dose": "float"           //    |  `- reference dose (0.0 to 1.0)
         },                                    //    |
         "appointments": [{                    //    `- list of appointments
+          "appointment_id": "uuid",           //       |- unique identifier of the appointment
           "step_id": "uuid",                  //       |- unique identifier of the treatment step
           "scheduled_at": "timestamp",        //       |- date of the appointment
           "fixed": "boolean",                 //       |- true if the appointment date is communicated to patient

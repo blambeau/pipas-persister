@@ -31,7 +31,7 @@ module PipasPersister
       def appointments
         from_plan = project(base.delivery_steps, [:step_id, :bed_load])
         from_plan = rename(from_plan, :bed_load => :duration)
-        aps = allbut(base.appointments, [:appointment_id])
+        aps = base.appointments
         aps = join(aps, from_plan)
         aps = image(aps, base.treatment_doses, :doses)
         extend(aps,
