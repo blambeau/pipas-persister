@@ -1,3 +1,9 @@
+# v0.5.2 -- 2014-04-29
+
+* Removed the last rest step of the test treatment plan.
+* Document the seeding service.
+* Added a dataset with 200 patients to be scheduled.
+
 # v0.5.1 -- 2014-03-27
 
 * Added `appointment_id` to /service/planning and /treatment/singular
