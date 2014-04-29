@@ -24,6 +24,22 @@ Please see the complete list with documentation at [/resources/](/resources/).
     POST /treatments/             create a patient and enrol her in a new treatment
     GET  /treatment-plans/        get the list of available treament plans
 
+## Database seeding service
+
+The database state can be reinstalled from scratch using the dedicated service:
+
+    PUT /testing/database?dataset=... put a specific dataset on the DB
+
+Currently, the following datasets are available:
+
+    initial-state       almost empty, with a treatment plan and a few patients
+    mid-state           same patients, a few appointments in the past, more in the future.
+    big                 200 patients to be scheduled. No appointment so far
+
+In practice:
+
+    curl -X PUT http://pipas-persister.herokuapp.com/testing/database?dataset=...
+
 ## Project structure
 
     /config      private configuration files on specific deployments
