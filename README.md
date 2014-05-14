@@ -33,7 +33,8 @@ The database state can be reinstalled from scratch using the dedicated service:
 Currently, the following datasets are available:
 
     initial-state       almost empty, with a treatment plan and a few patients
-    mid-state           same patients, a few appointments in the past, more in the future.
+    mid-state           same patients, a few appointments in the past, more in the future
+    contention          same patients but only two beds per week day (and nothing the weekend)
     big                 200 patients to be scheduled. No appointment so far
 
 In practice:
