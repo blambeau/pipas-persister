@@ -1,0 +1,8 @@
+[
+  { "step_id": "74685ae0-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 1,  "reference_dose": 1.0, "nurse_load": 60, "bed_load": 480 },
+  { "step_id": "74685c90-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 3,  "reference_dose": 1.0, "nurse_load": 60, "bed_load": 480 },
+  { "step_id": "74685d50-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 5,  "reference_dose": 1.0, "nurse_load": 60, "bed_load": 480 },
+  { "step_id": "74686130-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 7,  "reference_dose": 1.0, "nurse_load": 60, "bed_load": 480 },
+  { "step_id": "746861e0-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 9,  "reference_dose": 1.0, "nurse_load": 60, "bed_load": 480 },
+  { "step_id": "74686280-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 11, "reference_dose": 1.0, "nurse_load": 60, "bed_load": 480 }
+]
