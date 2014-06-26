@@ -38,7 +38,7 @@ namespace :db do
 
   desc "Rebuild the database (USE WITH CARE)"
   task :rebuild, :from do |t,args|
-    seed(args[:from] || 'initial-state')
+    PipasPersister::Seeder.call(args[:from] || 'initial-state')
   end
   task :rebuild => [ :create, :migrate ]
 
