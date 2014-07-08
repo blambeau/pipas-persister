@@ -5,6 +5,7 @@ require 'alf-rack'
 
 require_relative 'service/base'
 require_relative 'service/shield'
+require_relative 'service/simulation_time'
 require_relative 'service/scheduling'
 require_relative 'service/patients'
 require_relative 'service/appointments'
@@ -42,6 +43,10 @@ module PipasPersister
 
       # Implement the lock protocol and accuracy timestamp header
       use Service::Protocol
+
+      map '/simulation-time' do
+        run Service::SimulationTime
+      end
 
       map '/resources' do
         run Service::Resources

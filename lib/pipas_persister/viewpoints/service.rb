@@ -7,7 +7,7 @@ module PipasPersister
 
       def planning
         extend(DEE,
-          current_time: Time.now,
+          current_time: PipasPersister::getSimulationTime,
           treatments: ->(t){ treatments })
       end
 

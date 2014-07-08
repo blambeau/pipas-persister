@@ -17,7 +17,7 @@ module PipasPersister
         # now touch the last_scheduled flag
         relvar{
           base.scheduling
-        }.update(last_scheduled: Time.now)
+        }.update(last_scheduled: PipasPersister::getSimulationTime)
       end
 
     private

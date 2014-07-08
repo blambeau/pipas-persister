@@ -24,6 +24,18 @@ module PipasPersister
   # Only use ruby's DateTime class and hide Time one
   Time = ::Sequel.datetime_class = ::DateTime
 
+  # We use simulation_time for simulation only
+  @@simulation_time = Time.now
+
+  def self.updateSimulationTime
+    @@simulation_time = @@simulation_time + 1
+    puts @@simulation_time
+  end
+
+  def self.getSimulationTime
+    @@simulation_time
+  end
+
   # Version of the software component
   VERSION = "0.5.2"
 
