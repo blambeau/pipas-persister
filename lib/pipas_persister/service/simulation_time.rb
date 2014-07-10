@@ -7,11 +7,6 @@ module PipasPersister
         200
       end
 
-      put '/next-sec' do
-        PipasPersister::nextSecond
-        200
-      end
-
     end # class SimulationTime
   end # module Service
 end # module PipasPersister
