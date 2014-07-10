@@ -27,8 +27,13 @@ module PipasPersister
   # We use simulation_time for simulation only
   @@simulation_time = Time.now
 
-  def self.updateSimulationTime
+  def self.nextDay
     @@simulation_time = @@simulation_time + 1
+    puts @@simulation_time
+  end
+
+  def self.nextSecond
+    @@simulation_time = @@simulation_time + Rational(1, 86400)
     puts @@simulation_time
   end
 

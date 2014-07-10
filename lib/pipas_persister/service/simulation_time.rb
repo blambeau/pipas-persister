@@ -2,8 +2,13 @@ module PipasPersister
   module Service
     class SimulationTime < Base
 
-      put '/' do
-        PipasPersister::updateSimulationTime
+      put '/next-day' do
+        PipasPersister::nextDay
+        200
+      end
+
+      put '/next-sec' do
+        PipasPersister::nextSecond
         200
       end
 
