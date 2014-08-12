@@ -22,10 +22,12 @@ module PipasPersister
     #private
 
       def treatments
+        unavailabilities = project(base.patient_unavailabilities, [:treatment_id, :unavailable_at])
         ts = base.treatments
         ts = detail(ts, patients, :patient)
         ts = detail(ts, treatment_plans, :treatment_plan)
         ts = image(ts, appointments, :appointments)
+        image(ts, unavailabilities, :unavailabilities)
       end
 
       def appointments
@@ -40,7 +42,7 @@ module PipasPersister
 
       def treatment_plans
         ts = allbut(base.treatment_plans, [:link])
-        ts = join(ts, base.treatment_plan_derived_attrs)
+        join(ts, base.treatment_plan_derived_attrs)
       end
 
       def patients

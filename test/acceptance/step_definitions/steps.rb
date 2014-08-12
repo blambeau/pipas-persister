@@ -91,7 +91,7 @@ Then(/^the '(.*?)' attribute should be true$/) do |attr|
   value.should eq(true)
 end
 
-Then(/^the '(scheduled_at|delivered_at)' attribute should equal "(.*?)"$/) do |attr,date|
+Then(/^the '(scheduled_at|delivered_at|unavailable_at)' attribute should equal "(.*?)"$/) do |attr,date|
   obj = client.json_body
   obj.should be_a(Hash)
   value = obj[attr]

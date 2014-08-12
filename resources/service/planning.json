@@ -27,17 +27,20 @@
           "duration": "integer",              //    |  |- reference duration (in minutes)
           "reference_dose": "float"           //    |  `- reference dose (0.0 to 1.0)
         },                                    //    |
-        "appointments": [{                    //    `- list of appointments
-          "appointment_id": "uuid",           //       |- unique identifier of the appointment
-          "step_id": "uuid",                  //       |- unique identifier of the treatment step
-          "scheduled_at": "timestamp",        //       |- date of the appointment
-          "fixed": "boolean",                 //       |- true if the appointment date is communicated to patient
-          "duration": "integer",              //       |- expected duration of the appointment
-          "doses": {                          //       `- information about dosages
-            "reference": "float",             //          |- reference dose (always present)
-            "prescribed (?)": "float",        //          |- prescribed dose (if any yet)
-            "delivered (?)": "float"          //          `- delivered dose (if any)
-          }
+        "appointments": [{                    //    |- list of appointments
+          "appointment_id": "uuid",           //    |  |- unique identifier of the appointment
+          "step_id": "uuid",                  //    |  |- unique identifier of the treatment step
+          "scheduled_at": "timestamp",        //    |  |- date of the appointment
+          "fixed": "boolean",                 //    |  |- true if the appointment date is communicated to patient
+          "duration": "integer",              //    |  |- expected duration of the appointment
+          "doses": {                          //    |  `- information about dosages
+            "reference": "float",             //    |     |- reference dose (always present)
+            "prescribed (?)": "float",        //    |     |- prescribed dose (if any yet)
+            "delivered (?)": "float"          //    |     `- delivered dose (if any)
+          }                                   //    |
+        }],                                   //    |
+        "unavailabilities": [{                //    `- information about patient unavailabilities
+          "unavailable_at": "date"            //       `- date (full day) where patient is unavailable
         }]
       }]
     },
