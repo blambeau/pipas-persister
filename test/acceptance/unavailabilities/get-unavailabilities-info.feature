@@ -8,7 +8,7 @@ Feature: Unavailabilities information
 
   Scenario: Getting unavailabilities information
 
-    Given I receive a GET request to '/unavailabilities/d9027510-66ff-0131-38cb-3c07545ed162' with the headers:
+    Given I receive a GET request to '/unavailabilities/d9026fa0-66ff-0131-38cb-3c07545ed162' with the headers:
       | Content-Type     |
       | application/json |
 
