@@ -6,7 +6,7 @@ module PipasPersister
         # update unavailabilities
         relvar{
           restrict(base.patient_unavailabilities, treatment_id: input[:treatment_id])
-        }.update Tuple(input)
+        }.insert Tuple(input)
 
         # now touch the scheduling problem
         touch_scheduling_problem

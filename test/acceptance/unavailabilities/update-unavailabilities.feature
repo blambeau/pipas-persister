@@ -31,3 +31,29 @@ Feature: Updating unavailabilities
     Then I should return a "200 Ok" response
 
     And the 'unavailable_at' attribute should equal "2014-05-24 09:00:00"
+
+ Scenario: Adding another unavailability for the same patient
+
+   Given I receive a PUT request to '/unavailabilities/d9027510-66ff-0131-38cb-3c07545ed162' with the headers:
+      | Content-Type     |
+      | application/json |
+
+    And the request has the body:
+      """
+      {
+        "unavailable_at": "2014-05-25 09:00:00",
+        "reason": "another reason"
+      }
+      """
+
+    Then I should return a "200 Ok" response
+
+    ### check that something changed
+
+    Given I receive a GET request to '/unavailabilities/d9027510-66ff-0131-38cb-3c07545ed162' with the headers:
+      | Accept           |
+      | application/json |
+
+    Then I should return a "200 Ok" response
+
+    And the 'unavailable_at' attribute should equal "2014-05-25 09:00:00"
