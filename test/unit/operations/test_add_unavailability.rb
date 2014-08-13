@@ -1,11 +1,11 @@
 require 'spec_helper'
 module PipasPersister
   class Operation
-    describe UpdateUnavailabilities do
+    describe AddUnavailability do
 
       before do
         @connection = PipasPersister::ALF_DATABASE.connection
-        Seeder.new(@connection).call('operation-tests/update-unavailabilities')
+        Seeder.new(@connection).call('operation-tests/add-unavailability')
         @connection.reconnect(viewpoint: Viewpoint::Top[])
       end
 
@@ -14,29 +14,29 @@ module PipasPersister
       end
 
       subject{
-        UpdateUnavailabilities.new(@connection).call(input)
+        AddUnavailability.new(@connection).call(input)
       }
 
       context 'to add an unavailability' do
         let(:uuid){
-          "d9027510-66ff-0131-38cb-3c07545ed162"
+          "d9026fa0-66ff-0131-38cb-3c07545ed162"
         }
 
         unavailable_at = Time.parse("2014-05-24 09:00:00")
 
         let(:input){
-          Tuple(treatment_id: uuid, unavailable_at: unavailable_at)
+          Tuple(treatment_id: uuid, unavailable_at: unavailable_at, reason: "no reason")
         }
 
         before do
           subject
         end
 
-        it 'should work correctly and add it' do
+        it 'should work correctly and insert it' do
           uuid = self.uuid
-          @connection.tuple_extract{
-            restrict(base.patient_unavailabilities, treatment_id: uuid)
-          }[:unavailable_at].should eq(unavailable_at)
+          @connection.relvar{
+            restrict(base.patient_unavailabilities, treatment_id: uuid, unavailable_at: unavailable_at)
+          }.should_not be_empty
         end
 
         it 'should upate the scheduling problem' do

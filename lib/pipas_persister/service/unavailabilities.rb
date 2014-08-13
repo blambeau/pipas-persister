@@ -3,7 +3,7 @@ module PipasPersister
     class Unavailabilities < Base
 
       get '/:uuid' do |uuid|
-        respond_with tuple_extract{
+        respond_with relvar {
           restrict(base.patient_unavailabilities, treatment_id: uuid)
         }
       end
@@ -12,8 +12,8 @@ module PipasPersister
         input = request.body.read
         input = ::JSON.load(input)
         input = input.merge("treatment_id" => uuid)
-        r = Resource['/unavailabilities/singular'].decode(input)
-        run_operation Operation::UpdateUnavailabilities, r
+        r = Resource['/unavailabilities/put'].decode(input)
+        run_operation Operation::AddUnavailability, r
         200
       end
 

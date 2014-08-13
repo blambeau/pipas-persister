@@ -14,10 +14,10 @@ Feature: Updating unavailabilities
 
     And the request has the body:
       """
-      {
+      [{
         "unavailable_at": "2014-05-24 09:00:00",
         "reason": "no reason"
-      }
+      }]
       """
 
     Then I should return a "200 Ok" response
@@ -48,7 +48,15 @@ Feature: Updating unavailabilities
 
     Then I should return a "200 Ok" response
 
-    ### check that something changed
+    ### check that both unavailabilities are recorded
+
+    Given I receive a GET request to '/unavailabilities/d9027510-66ff-0131-38cb-3c07545ed162' with the headers:
+      | Accept           |
+      | application/json |
+
+    Then I should return a "200 Ok" response
+
+    And the 'unavailable_at' attribute should equal "2014-05-24 09:00:00"
 
     Given I receive a GET request to '/unavailabilities/d9027510-66ff-0131-38cb-3c07545ed162' with the headers:
       | Accept           |

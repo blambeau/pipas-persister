@@ -19,7 +19,7 @@ Please see the complete list with documentation at [/resources/](/resources/).
     GET  /deliveries/{uuid}       get information about a specific delivery
     POST /deliveries/             add information about a new delivery
     GET  /unavailabilities/{uuid} get patient unavailabilities information about a specific treatment
-    PUT  /unavailabilities/{uuid} update patient unavailabilities information about a treatment
+    PUT  /unavailabilities/{uuid} add patient unavailability information about a treatment
     GET  /service/planning        get the current service planning
     GET  /service/availabilities  get information about service availabilities
     GET  /treatments/{uuid}       get information about a specific treatment
