@@ -1,8 +1,8 @@
 {
     "uri": {
-      "pattern": "/unavailabilities/{uuid}",
-      "documentation": "/unavailabilities/put",
-      "example": "/unavailabilities/d9026fa0-66ff-0131-38cb-3c07545ed162"
+      "pattern": "/treatments/{uuid}/unavailabilities/",
+      "documentation": "/treatments/unavailabilities/put",
+      "example": "/treatments/d9026fa0-66ff-0131-38cb-3c07545ed162/unavailabilities/"
     },
     "synopsis": "Information about a patient specific unavailability (PUT only)",
     "description": "This resource captures required information for creating an unavailability",

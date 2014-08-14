@@ -27,6 +27,21 @@ module PipasPersister
         201
       end
 
+      get '/:uuid/unavailabilities' do |uuid|
+        respond_with relvar {
+          restrict(base.patient_unavailabilities, treatment_id: uuid)
+        }
+      end
+
+      put '/:uuid/unavailabilities' do |uuid|
+        input = request.body.read
+        input = ::JSON.load(input)
+        input = input.merge("treatment_id" => uuid)
+        r = Resource['/treatments/unavailabilities/put'].decode(input)
+        run_operation Operation::AddUnavailability, r
+        200
+      end
+
     end # class Treatments
   end # module Service
 end # module PipasPersister

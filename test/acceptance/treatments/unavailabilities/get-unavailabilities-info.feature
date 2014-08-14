@@ -8,9 +8,9 @@ Feature: Unavailabilities information
 
   Scenario: Getting unavailabilities information
 
-    Given I receive a GET request to '/unavailabilities/d9026fa0-66ff-0131-38cb-3c07545ed162' with the headers:
+    Given I receive a GET request to '/treatments/d9026fa0-66ff-0131-38cb-3c07545ed162/unavailabilities' with the headers:
       | Content-Type     |
       | application/json |
 
     Then I should return a "200 Ok" response
-    And the body should be a valid '/unavailabilities/singular' resource representation
+    And the body should be a valid '/treatments/unavailabilities/singular' resource representation
