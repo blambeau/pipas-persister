@@ -98,6 +98,18 @@ Then(/^the '(scheduled_at|delivered_at|unavailable_at)' attribute should equal "
   DateTime.parse(value).should eq(DateTime.parse(date))
 end
 
+Then(/^there should exist a tuple such that the 'unavailable_at' attribute equal "(.*?)"$/) do |date|
+  obj = client.json_body
+  obj.should be_a(Array)
+  found = false
+  obj.each do |elm|
+    elm.should be_a(Hash)
+    value = elm['unavailable_at']
+    if DateTime.parse(value) == DateTime.parse(date) then found = true end
+  end
+  found.should eq(true)
+end
+
 ### resources
 
 Then(/^the resource URI should have a valid example$/) do
