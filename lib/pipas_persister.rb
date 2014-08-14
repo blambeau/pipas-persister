@@ -19,6 +19,9 @@ require 'json'
 require_relative 'ext/datetime'
 require_relative 'ext/alf/detail'
 
+# Sequel database object (for connection pooling)
+require 'logger'
+
 module PipasPersister
 
   # Only use ruby's DateTime class and hide Time one
@@ -64,6 +67,8 @@ module PipasPersister
   DATABASE_CONFIG = ENV['DATABASE_URL'] \
                  || (DATABASE_CONFIG_FILE.exists? && DATABASE_CONFIG_FILE.load[ENVIRONMENT]) \
                  || raise("Unable to find database configuration under `#{ENVIRONMENT}`")
+
+#  DATABASE_CONFIG.merge!(:loggers => [ Logger.new(STDOUT) ])
 
   # Sequel database object (for connection pooling)
   SEQUEL_DATABASE = ::Sequel.connect(DATABASE_CONFIG)
