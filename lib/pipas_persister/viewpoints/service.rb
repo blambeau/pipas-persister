@@ -19,8 +19,6 @@ module PipasPersister
         allbut(extend(avail, open: ->(t){ t.minutes > 0 }), :minutes)
       end
 
-    #private
-
       def treatments
         unavailabilities = project(base.patient_unavailabilities, [:treatment_id, :unavailable_at])
         ts = base.treatments
@@ -47,6 +45,10 @@ module PipasPersister
 
       def patients
         base.patients
+      end
+
+      def load
+        base.service_load
       end
 
     end # module Service

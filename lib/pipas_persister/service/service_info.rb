@@ -26,6 +26,12 @@ module PipasPersister
         }
       end
 
+      get '/load' do
+        respond_with relvar{
+          service.load
+        }
+      end
+
     private
 
       def max(t1, t2)

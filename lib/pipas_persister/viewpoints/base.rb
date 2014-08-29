@@ -86,6 +86,7 @@ module PipasPersister
       native :bed_availabilities
       native :nurse_availabilities
       native :minutes_per_day
+      native :service_load
 
     end # module Base
   end # module Viewpoint

@@ -1,0 +1,7 @@
+[
+  { "step_id": "558a3280-66fc-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 2,  "duration": 28800 },
+  { "step_id": "5bab12d0-66fc-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 4,  "duration": 28800 },
+  { "step_id": "bbfeb080-66fc-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 6,  "duration": 28800 },
+  { "step_id": "1d374cf0-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 8,  "duration": 28800 },
+  { "step_id": "2351ab90-66fd-0131-38cb-3c07545ed162", "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162", "position": 10, "duration": 28800 }
+]

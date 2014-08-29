@@ -97,5 +97,11 @@ Sequel.migration do
       primary_key [:treatment_id, :unavailable_at]
       foreign_key [:treatment_id], :treatments, :null => false, :key => [:treatment_id], :deferrable=>true
     end
+    create_table(:service_load) do
+      column :problem_key, "varchar(36)", null: false
+      column :bed_load, "float", null: false
+      column :nurse_load, "float", null: false
+      primary_key [:problem_key]
+    end
   end
 end

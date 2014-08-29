@@ -20,6 +20,7 @@ Please see the complete list with documentation at [/resources/](/resources/).
     POST /deliveries/                         add information about a new delivery
     GET  /service/planning                    get the current service planning
     GET  /service/availabilities              get information about service availabilities
+    GET  /service/load                        get information about service (nurses and beds) load
     GET  /treatments/{uuid}                   get information about a specific treatment
     POST /treatments/                         create a patient and enrol her in a new treatment
     GET  /treatments/{uuid}/unavailabilities  get patient unavailabilities information about a specific treatment
