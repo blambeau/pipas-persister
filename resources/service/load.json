@@ -1,0 +1,28 @@
+{
+    "uri": {
+      "pattern": "/service/load",
+      "documentation": "/service/load",
+      "example": "/service/load"
+    },
+    "synopsis": "Information about service (beds and nurses) load",
+    "description": "This resource provides information about the service, such as nurse and bed load",
+    "remarks": [
+    ],
+    "schema": [{                              // service load
+      "problem_key": "string",                // |- problem key of which service load is indicated
+      "bed_load":  "float",                   // |- average bed load
+      "nurse_load": "float"                   // |- average nurse load
+    }],
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the availabilities information",
+        "request": {
+          "Accept": "text/plain, application/json"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`"
+        }
+      }
+    ]
+}

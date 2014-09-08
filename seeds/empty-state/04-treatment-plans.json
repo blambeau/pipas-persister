@@ -3,5 +3,25 @@
     "tplan_id": "bae04d10-66fb-0131-38cb-3c07545ed162",
     "name": "FEC Chemotherapy",
     "link": "http://www.macmillan.org.uk/Cancerinformation/Cancertreatment/Treatmenttypes/Chemotherapy/Combinationregimen/FEC.aspx"
+  },
+  {
+    "tplan_id": "folfiricetuximabcolorectal",
+    "name": "Folfiri Cetuximab (colorectal)",
+    "link": ""
+  },
+  {
+    "tplan_id": "xeloxavastincolorectal",
+    "name": "Xelox Avastin (colorectal)",
+    "link": ""
+  },
+  {
+    "tplan_id": "gemciattackpancreas",
+    "name": "Gemci Attack Pancreas",
+    "link": ""
+  },
+  {
+    "tplan_id": "cisplatgemcibladder",
+    "name": "Cisplat-Gemci (bladder)",
+    "link": ""
   }
 ]
