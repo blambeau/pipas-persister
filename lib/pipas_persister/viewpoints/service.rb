@@ -7,7 +7,7 @@ module PipasPersister
 
       def planning
         extend(DEE,
-          current_time: Time.now,
+          current_time: PipasPersister::getSimulationTime,
           treatments: ->(t){ treatments })
       end
 
@@ -19,13 +19,13 @@ module PipasPersister
         allbut(extend(avail, open: ->(t){ t.minutes > 0 }), :minutes)
       end
 
-    #private
-
       def treatments
+        unavailabilities = project(base.patient_unavailabilities, [:treatment_id, :unavailable_at])
         ts = base.treatments
         ts = detail(ts, patients, :patient)
         ts = detail(ts, treatment_plans, :treatment_plan)
         ts = image(ts, appointments, :appointments)
+        image(ts, unavailabilities, :unavailabilities)
       end
 
       def appointments
@@ -40,11 +40,15 @@ module PipasPersister
 
       def treatment_plans
         ts = allbut(base.treatment_plans, [:link])
-        ts = join(ts, base.treatment_plan_derived_attrs)
+        join(ts, base.treatment_plan_derived_attrs)
       end
 
       def patients
         base.patients
+      end
+
+      def load
+        base.service_load
       end
 
     end # module Service

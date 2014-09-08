@@ -19,10 +19,25 @@ require 'json'
 require_relative 'ext/datetime'
 require_relative 'ext/alf/detail'
 
+# Sequel database object (for connection pooling)
+require 'logger'
+
 module PipasPersister
 
   # Only use ruby's DateTime class and hide Time one
   Time = ::Sequel.datetime_class = ::DateTime
+
+  # We use Time + offset for simulation only
+  @@offset = 0
+
+  def self.nextDay
+    @@offset = @@offset + 1
+    puts @@offset
+  end
+
+  def self.getSimulationTime
+    Time.now + @@offset
+  end
 
   # Version of the software component
   VERSION = "0.5.2"
@@ -52,6 +67,8 @@ module PipasPersister
   DATABASE_CONFIG = ENV['DATABASE_URL'] \
                  || (DATABASE_CONFIG_FILE.exists? && DATABASE_CONFIG_FILE.load[ENVIRONMENT]) \
                  || raise("Unable to find database configuration under `#{ENVIRONMENT}`")
+
+#  DATABASE_CONFIG.merge!(:loggers => [ Logger.new(STDOUT) ])
 
   # Sequel database object (for connection pooling)
   SEQUEL_DATABASE = ::Sequel.connect(DATABASE_CONFIG)

@@ -33,7 +33,6 @@ module PipasPersister
         let(:input){
           Tuple(
             problem_key: "update-scheduling-solution",
-            rdi: 0.95,
             treatments: Relation([
               {
                 treatment_id: "d9027510-66ff-0131-38cb-3c07545ed162",
@@ -48,7 +47,13 @@ module PipasPersister
                   }
                 ])
               }
-            ])
+            ]),
+            service: Relation(
+              {
+                bed_load: 0.0,
+                nurse_load: 0.0
+              }
+            )
           )
         }
 

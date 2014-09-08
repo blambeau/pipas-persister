@@ -91,11 +91,23 @@ Then(/^the '(.*?)' attribute should be true$/) do |attr|
   value.should eq(true)
 end
 
-Then(/^the '(scheduled_at|delivered_at)' attribute should equal "(.*?)"$/) do |attr,date|
+Then(/^the '(scheduled_at|delivered_at|unavailable_at)' attribute should equal "(.*?)"$/) do |attr,date|
   obj = client.json_body
   obj.should be_a(Hash)
   value = obj[attr]
   DateTime.parse(value).should eq(DateTime.parse(date))
+end
+
+Then(/^there should exist a tuple such that the 'unavailable_at' attribute equal "(.*?)"$/) do |date|
+  obj = client.json_body
+  obj.should be_a(Array)
+  found = false
+  obj.each do |elm|
+    elm.should be_a(Hash)
+    value = elm['unavailable_at']
+    if DateTime.parse(value) == DateTime.parse(date) then found = true end
+  end
+  found.should eq(true)
 end
 
 ### resources

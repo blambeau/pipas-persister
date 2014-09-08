@@ -1,0 +1,28 @@
+{
+    "uri": {
+      "pattern": "/treatments/{uuid}/unavailabilities/",
+      "documentation": "/treatments/unavailabilities/singular",
+      "example": "/treatments/d9026fa0-66ff-0131-38cb-3c07545ed162/unavailabilities"
+    },
+    "synopsis": "Information about a patient unavailabilities for a single treatment (GET only)",
+    "description": "This resource provides information about a patient unavailabilities for a single treatment",
+    "remarks": [
+    ],
+    "schema": [{                              // unavailabilities information
+        "treatment_id": "uuid",               // |- unique identifier of the treatment
+        "unavailable_at": "date",             // |- date (full day) when patient is unavailable
+        "reason": "string"                    // `- reason of the unavailability
+    }],
+    "services": [
+      {
+        "method": "GET",
+        "description": "Get the patient unavailabilities information",
+        "request": {
+          "Accept": "text/plain, application/json"
+        },
+        "response": {
+          "Content-Type": "Granting `Accept` header, defaults to `application/json`"
+        }
+      }
+    ]
+}

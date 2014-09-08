@@ -52,7 +52,7 @@ module PipasPersister
     def touch_scheduling_problem
       relvar{
         base.scheduling
-      }.update(last_modified: Time.now, problem_key: new_problem_key)
+      }.update(last_modified: PipasPersister::getSimulationTime, problem_key: new_problem_key)
     end
 
     def new_problem_key

@@ -1,0 +1,28 @@
+{
+    "uri": {
+      "pattern": "/treatments/{uuid}/unavailabilities/",
+      "documentation": "/treatments/unavailabilities/put",
+      "example": "/treatments/d9026fa0-66ff-0131-38cb-3c07545ed162/unavailabilities"
+    },
+    "synopsis": "Information about a patient specific unavailability (PUT only)",
+    "description": "This resource captures required information for creating an unavailability",
+    "remarks": [
+    ],
+    "schema": {                               // unavailability information
+        "treatment_id": "uuid",               // |- unique identifier of the treatment
+        "unavailable_at": "date",             // |- date (full day) when patient is unavailable
+        "reason": "string"                    // `- reason of the unavailability
+    },
+    "services": [
+      {
+        "method": "PUT",
+        "description": "Add unavailability information about a particular patient",
+        "request": {
+          "Content-Type": "application/json"
+        },
+        "response": {
+          "Location": "URI of the resulting patient unavailabilities resource"
+        }
+      }
+    ]
+}

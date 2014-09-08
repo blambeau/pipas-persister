@@ -1,0 +1,9 @@
+[
+  { "week_day": "monday",    "quantity": 2  },
+  { "week_day": "tuesday",   "quantity": 2  },
+  { "week_day": "wednesday", "quantity": 3  },
+  { "week_day": "thursday",  "quantity": 2  },
+  { "week_day": "friday",    "quantity": 2  },
+  { "week_day": "saturday",  "quantity": 0  },
+  { "week_day": "sunday",    "quantity": 0  }
+]
